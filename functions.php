@@ -1,4 +1,18 @@
 <?php
+// init custom posts
+require_once 'custom-posts.php';
+// add ACF Theme Options
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+                'page_title' => 'Allgemeine Theme Settings',
+                'menu_title' => 'Theme Settings',
+                'menu_slug' => 'theme-general-settings',
+                'position' => '63.3',
+                'capability' => 'edit_posts',
+                'redirect' => false
+        ));	
+}
 
 add_action('after_setup_theme', 'hz_theme_setup');
 
