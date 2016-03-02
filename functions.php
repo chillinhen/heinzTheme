@@ -1,6 +1,6 @@
 <?php
 // init custom posts
-require_once 'custom-posts.php';
+require_once 'inc/custom-posts.php';
 // add ACF Theme Options
 if( function_exists('acf_add_options_page') ) {
 	
@@ -20,6 +20,12 @@ function hz_theme_setup() {
 
 // Adding Translation Option
     load_theme_textdomain('heinzTheme', get_stylesheet_directory_uri() . '/languages');
+    
+       //new Image Formats
+    add_image_size('carousel', 980, 570, array( 'top', 'center' ));
+//    add_image_size('portrait', 560, 680, true);
+//    add_image_size('sidebar',365,365,true);
+//    add_image_size('blog-detail',745,290,true);
 
     //init scripts
     if (!function_exists("my_scripts")) {
@@ -85,6 +91,39 @@ function hz_theme_setup() {
         return $classes;
     }
     add_filter('body_class', 'mv_browser_body_class');
+    
+    if (function_exists('register_sidebar')) {
+        // Define Sidebar Home
+        register_sidebar(array(
+            'name' => __('Sidebar Home', 'heinzTheme'),
+            'description' => __('Hier die Widgets, die nur auf der Startseite angezeigt werden sollen', 'heinzTheme'),
+            'id' => 'sidebar-home',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Footer Widgets column 01
+        register_sidebar(array(
+            'name' => __('Footer 01', 'heinzTheme'),
+            'description' => __('Hier die Footer Widgets Spalte 01...', 'heinzTheme'),
+            'id' => 'footer-widgets-1',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Footer Widgets column 02
+        register_sidebar(array(
+            'name' => __('Footer 02', 'heinzTheme'),
+            'description' => __('Hier die Footer Widgets Spalte 02...', 'heinzTheme'),
+            'id' => 'footer-widgets-2',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+    }
 }
 
 ?>

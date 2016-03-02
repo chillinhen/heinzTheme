@@ -7,9 +7,9 @@ function my_custom_post_carousel() {
     'add_new_item'       => __( 'Add New Carousel' ),
     'edit_item'          => __( 'Edit Carousel' ),
     'new_item'           => __( 'New Carousel' ),
-    'all_items'          => __( 'All Carousel' ),
-    'view_item'          => __( 'View Carousel' ),
-    'search_items'       => __( 'Search Carousel' ),
+    'all_items'          => __( 'All Carousels' ),
+    'view_item'          => __( 'View Carousels' ),
+    'search_items'       => __( 'Search Carousels' ),
     'not_found'          => __( 'No carousels found' ),
     'not_found_in_trash' => __( 'No carousels found in the Trash' ), 
     'parent_item_colon'  => '',
@@ -20,7 +20,8 @@ function my_custom_post_carousel() {
     'description'   => 'Holds our carousels and carousel specific data',
     'public'        => true,
     'menu_position' => 10,
-    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+    #'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+    'supports'      => array('title', 'thumbnail'),
     'has_archive'   => true,
   );
   register_post_type( 'carousel', $args ); 
