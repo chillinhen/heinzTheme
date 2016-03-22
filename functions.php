@@ -1,65 +1,146 @@
 <?php
 // init custom posts
 require_once 'inc/custom-posts.php';
+require_once('inc/customizer.php');
 // add ACF Theme Options
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-                'page_title' => 'Allgemeine Theme Settings',
-                'menu_title' => 'Theme Settings',
-                'menu_slug' => 'theme-general-settings',
-                'position' => '63.3',
-                'capability' => 'edit_posts',
-                'redirect' => false
-        ));	
+if (function_exists('acf_add_options_page')) {
+
+    acf_add_options_page(array(
+        'page_title' => 'Allgemeine Theme Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-general-settings',
+        'position' => '63.3',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
 }
 
 add_action('after_setup_theme', 'hz_theme_setup');
-
 function hz_theme_setup() {
-
-// Adding Translation Option
+    //remove scrap
+    remove_filter('show_admin_bar', 'remove_admin_bar');
+    remove_action('init', 'create_post_type_html5');
+    // Adding Translation Option
     load_theme_textdomain('heinzTheme', get_stylesheet_directory_uri() . '/languages');
-    
-       //new Image Formats
-    add_image_size('carousel', 980, 570, array( 'top', 'center' ));
+    //new Image Formats
+    add_image_size('carousel', 980, 570, array('top', 'center'));
 //    add_image_size('portrait', 560, 680, true);
 //    add_image_size('sidebar',365,365,true);
 //    add_image_size('blog-detail',745,290,true);
+//    
+    //modernizr
+        add_action('wp_enqueue_scripts', 'register_modernizr');
 
+    function register_modernizr() {
+        wp_deregister_script('modernizr');
+        wp_enqueue_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js', '2.8.3', true);
+    }
     //init scripts
-    if (!function_exists("my_scripts")) {
+    add_action('wp_enqueue_scripts', 'hz_scripts');
+    if (!function_exists("hz_scripts")) {
         if (!is_admin()) {
 
-            function my_scripts() {
-                wp_enqueue_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '1.2', true);
+            function hz_scripts() {
+                wp_register_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '1.2', true);
+                wp_enqueue_script('modernizr');
+                wp_register_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array('jquery'), '3.3.6'); // Bootstrap
+                wp_enqueue_script('bootstrap');
 
-                wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/includes/js/custom.js', array('jquery'), '1.2', true);
+                wp_register_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery','bootstrap'), '1.2', true);
+                 wp_enqueue_script('custom');
             }
 
         }
     }
-    add_action('wp_enqueue_scripts', 'my_scripts');
+    
+    
+    // init styles
+    function hz_styles() {
+        wp_register_style('parent-style', get_template_directory_uri() . '/style.css');
+        wp_enqueue_style('parent-style'); // Enqueue it!
 
-    //init styles
-    if (!function_exists("my_styles")) {
-        if (!is_admin()) {
+        wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array(), '3.3.6', 'all');
+        wp_enqueue_style('bootstrap'); // Enqueue it!
 
-            function my_styles() {
-                wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+        wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic|Montserrat', array(),'all');
+        wp_enqueue_style('googlefont'); // Enqueue it!
 
-                wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,600,400italic,600italic,700,700italic', 'style', '1.0', 'screen');
-                wp_register_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'screen');
-                wp_enqueue_style('fontawesome');
-                wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/includes/css/custom.css', 'style', '1.0', 'screen', array());
-            }
+        wp_register_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', array(),'4.4.0', 'all');
+        wp_enqueue_style('fontawseome'); // Enqueue it!
 
-        }
+        wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style', 'bootstrap', 'googlefont', 'fontawseome'), '1.0', 'all');
+        wp_enqueue_style('child-style'); // Enqueue it!
     }
-    add_action('wp_enqueue_scripts', 'my_styles');
+    add_action('wp_enqueue_scripts', 'hz_styles');
+    
+    
+    if (function_exists('register_sidebar')) {
+        // Define Sidebar Home
+        register_sidebar(array(
+            'name' => __('Sidebar Home', 'heinzTheme'),
+            'description' => __('Hier die Widgets, die nur auf der Startseite angezeigt werden sollen', 'heinzTheme'),
+            'id' => 'sidebar-home',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Soundcloud
+        register_sidebar(array(
+            'name' => __('SoundCloud', 'heinzTheme'),
+            'description' => __('Hier das SoundCloud Widget...', 'heinzTheme'),
+            'id' => 'sc-widgets',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Newsletter
+        register_sidebar(array(
+            'name' => __('Newsletter', 'heinzTheme'),
+            'description' => __('Hier das Newsletter Widget...', 'heinzTheme'),
+            'id' => 'nl-widget',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define FBWidget
+        register_sidebar(array(
+            'name' => __('Facebook Widget', 'heinzTheme'),
+            'description' => __('Hier das Facebook Widget...', 'heinzTheme'),
+            'id' => 'fb-widget',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Footer Widgets column 01
+        register_sidebar(array(
+            'name' => __('Footer 01', 'heinzTheme'),
+            'description' => __('Hier die Footer Widgets Spalte 01...', 'heinzTheme'),
+            'id' => 'footer-widgets-1',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Footer Widgets column 02
+        register_sidebar(array(
+            'name' => __('Footer 02', 'heinzTheme'),
+            'description' => __('Hier die Footer Widgets Spalte 02...', 'heinzTheme'),
+            'id' => 'footer-widgets-2',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+    }
+}
 
-    //Browser Classes
-    function mv_browser_body_class($classes) {
+
+add_filter('body_class', 'mv_browser_body_class');
+function mv_browser_body_class($classes) {
         global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
         if ($is_lynx)
             $classes[] = 'lynx';
@@ -90,40 +171,4 @@ function hz_theme_setup() {
         }
         return $classes;
     }
-    add_filter('body_class', 'mv_browser_body_class');
-    
-    if (function_exists('register_sidebar')) {
-        // Define Sidebar Home
-        register_sidebar(array(
-            'name' => __('Sidebar Home', 'heinzTheme'),
-            'description' => __('Hier die Widgets, die nur auf der Startseite angezeigt werden sollen', 'heinzTheme'),
-            'id' => 'sidebar-home',
-            'before_widget' => '<div id="%1$s" class="%2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>'
-        ));
-        // Define Footer Widgets column 01
-        register_sidebar(array(
-            'name' => __('Footer 01', 'heinzTheme'),
-            'description' => __('Hier die Footer Widgets Spalte 01...', 'heinzTheme'),
-            'id' => 'footer-widgets-1',
-            'before_widget' => '<div id="%1$s" class="%2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>'
-        ));
-        // Define Footer Widgets column 02
-        register_sidebar(array(
-            'name' => __('Footer 02', 'heinzTheme'),
-            'description' => __('Hier die Footer Widgets Spalte 02...', 'heinzTheme'),
-            'id' => 'footer-widgets-2',
-            'before_widget' => '<div id="%1$s" class="%2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>'
-        ));
-    }
-}
-
 ?>

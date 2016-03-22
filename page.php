@@ -1,28 +1,31 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package _tk
- */
+<?php get_header(); ?>
+<!-- section -->
+<section class="row">
 
-get_header(); ?>
+    <?php if (have_posts()): ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <div class="col-md-8">
+                <!-- article -->
+                <?php get_template_part('partials/article', 'full'); ?>
+                <!-- /article -->
 
-	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part( 'content', 'page' ); ?>
 
-		<?php
-			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || '0' != get_comments_number() )
-				comments_template();
-		?>
+            </div>
+        <?php endwhile; ?>
+        <div class="col-md-4"><?php get_sidebar(); ?></div>
 
-	<?php endwhile; // end of the loop. ?>
+    <?php else: ?>
 
-<?php get_sidebar(); ?>
+        <!-- 404 -->
+        <div class="col-md-8">
+            <?php get_template_part('partials/article', '404'); ?>
+        </div>
+        <!-- /404 -->
+    </div>
+<?php endif; ?>
+
+</section>
+<!-- /section -->
+
 <?php get_footer(); ?>

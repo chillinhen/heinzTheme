@@ -1,44 +1,58 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content after
- *
- * @package _tk
- */
-?>
-</div><!-- close .*-inner (main-content or sidebar, depending if sidebar is used) -->
-</div><!-- close .row -->
-</div><!-- close .container -->
-</div><!-- close .main-content -->
+<section class="row widgets">
+    
+    <?php
+    $kontaktHeadline = get_field('kontakt_headline', 'option');
+    $kontakt = get_field('kontaktdaten', 'option');
+    if ($kontakt) :
+        ?>
+        <div class="col-md-8">
+            <?php if($kontaktHeadline) : ?>
+            <h3><?php echo $kontaktHeadline; ?></h3>
+            <?php endif;?>
+            <?php echo $kontakt; ?>
+        </div>
 
-<footer id="colophon" class="site-footer" role="contentinfo">
-    <?php // substitute the class "container-fluid" below if you want a wider content area ?>
+    <?php endif;?>
+    
+    <div class="col-md-4">
+        <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('fb-widget'))  ?>
+    </div>
+</section>
+</main>	
+</div>
+<!-- footer -->
+<footer class="footer" role="contentinfo">
     <div class="container">
         <div class="row">
-            <div class="site-footer-inner col-sm-12">
-                <div class="footer-widgets">
-                    <div class="footer-widget col-sm-6">
-                        <i>hier die Kauflinks?</i>
-                        <?php #if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widgets-1'))  ?>
-                    </div>
-                    <div class="footer-widget col-sm-6">
-                        <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widgets-2'))  ?>
-                    </div>
-                </div>
-                <div class="site-info text-center text-muted">
-                    <?php do_action('_tk_credits'); ?>
-                    <a href="http://wordpress.org/" title="<?php esc_attr_e('A Semantic Personal Publishing Platform', '_tk'); ?>" rel="generator"><?php printf(__('Proudly powered by %s', '_tk'), 'WordPress'); ?></a>
-                    <span class="sep"> | </span>
-                    <a class="credits" href="http://themekraft.com/" target="_blank" title="Themes and Plugins developed by Themekraft" alt="Themes and Plugins developed by Themekraft"><?php _e('Themes and Plugins developed by Themekraft.', '_tk') ?> </a>
-                </div><!-- close .site-info -->
+            <?php get_sidebar('footer'); ?>
 
-            </div>
         </div>
-    </div><!-- close .container -->
-</footer><!-- close #colophon -->
+        <div class="row">
+            <!-- copyright -->
+            <div class="copyright col-md-12 text-center">
+                &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
+                <a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
+            </div>
+            <!-- /copyright -->
+        </div>
+    </div>
+</footer>
+<!-- /footer -->
+
+</div>
+<!-- /wrapper -->
 
 <?php wp_footer(); ?>
+
+<!-- analytics -->
+<?php $analytics = get_field('analytics', 'option');
+if ($analytics):
+    ?>
+    <script>
+    <?php echo strip_tags($analytics); ?>
+    </script>
+<?php endif; ?>
+<!-- analytics --> 
 
 </body>
 </html>
