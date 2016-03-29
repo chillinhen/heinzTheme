@@ -1,32 +1,5 @@
-.container{
-    border:1px solid green;
-}
+
 .navbar-brand{
     @media screen and (min-width:$screen-sm){display:none;}
 }
-#main-menu{
-    @media screen and (min-width:$screen-md){
-       padding:0; 
-    }
-    margin:$vgrid 0;
-    text-transform:uppercase;
-    font-size: 16px;
-    font-weight: bolder;
-    ul {
-        list-style: none;
-        text-align: center;
-        @extend %reset;
-        li {
-            display: inline-block;
-            margin:0 1em;
-            a {
-                color:black;
-                &:hover{text-decoration: none;}
-            }
-        }
-    }
-}
-body > footer {
-    background: #000;
-    * {color:white;}
-}
+

@@ -1,0 +1,27 @@
+// Neat Overrides
+$column: 40px;
+$gutter: 44px;
+$grid-columns: 12;
+$max-width: 980px;
+
+.container {
+    @include outer-container;
+    @extend %clearfix;
+}
+.main {
+    @include span-columns(8);
+}
+.side {
+    @include span-columns(4);
+}
+.latest{
+    > * {@include span-columns(6);}
+}
+.footer{
+    .copyright{
+        text-align: center; 
+    }
+    .footer-widget{
+        @include span-columns(6);
+    }
+}

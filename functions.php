@@ -43,10 +43,10 @@ function hz_theme_setup() {
             function hz_scripts() {
                 wp_register_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '1.2', true);
                 wp_enqueue_script('modernizr');
-                wp_register_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array('jquery'), '3.3.6'); // Bootstrap
-                wp_enqueue_script('bootstrap');
+                            wp_register_script('flexslider',get_stylesheet_directory_uri().'/flexslider/jquery.flexslider.js',array('jquery'),false,true);
+            wp_enqueue_script('flexslider');
 
-                wp_register_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery','bootstrap'), '1.2', true);
+                wp_register_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery','flexslider'), '1.2', true);
                  wp_enqueue_script('custom');
             }
 
@@ -58,17 +58,18 @@ function hz_theme_setup() {
     function hz_styles() {
         wp_register_style('parent-style', get_template_directory_uri() . '/style.css');
         wp_enqueue_style('parent-style'); // Enqueue it!
+        wp_register_style('flexslider',get_stylesheet_directory_uri().'/flexslider/flexslider.css',array(),false,'screen');
+        wp_enqueue_style('flexslider');
 
-        wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array(), '3.3.6', 'all');
-        wp_enqueue_style('bootstrap'); // Enqueue it!
-
-        wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic|Montserrat', array(),'all');
+        wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento+Sans:400,700,700italic,400italic', array(),'all');
         wp_enqueue_style('googlefont'); // Enqueue it!
+        
+        
 
         wp_register_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', array(),'4.4.0', 'all');
         wp_enqueue_style('fontawseome'); // Enqueue it!
 
-        wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style', 'bootstrap', 'googlefont', 'fontawseome'), '1.0', 'all');
+        wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style', 'flexslider', 'googlefont', 'fontawseome'), '1.0', 'all');
         wp_enqueue_style('child-style'); // Enqueue it!
     }
     add_action('wp_enqueue_scripts', 'hz_styles');

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <!-- section -->
-<section class="row">
+<section class="wrapper">
 
     <?php if (have_posts()): ?>
         <?php while (have_posts()) : the_post(); ?>
-            <div class="col-md-8">
+            <div class="main">
                 <!-- article -->
                 <?php get_template_part('partials/article', 'full'); ?>
                 <!-- /article -->
@@ -13,12 +13,12 @@
 
             </div>
         <?php endwhile; ?>
-        <div class="col-md-4"><?php get_sidebar(); ?></div>
+        <div class="side"><?php get_sidebar(); ?></div>
 
     <?php else: ?>
 
         <!-- 404 -->
-        <div class="col-md-8">
+        <div class="main">
             <?php get_template_part('partials/article', '404'); ?>
         </div>
         <!-- /404 -->

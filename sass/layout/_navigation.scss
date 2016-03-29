@@ -1,0 +1,23 @@
+#main-menu{
+	font-family: $heading-font-family;
+    @include padding(10vh null 10vH null);
+    text-transform:uppercase;
+    font-weight: bolder;
+    font-size: rem(36);
+    ul {
+        list-style: none;
+        text-align: center;
+        @extend %reset;
+        li {
+            display:inline-block;
+            margin:0 1em 0 0;
+            a {
+                color:black;
+                &:hover{text-decoration: none;}
+            }
+        }
+    }
+}
+.navbar-toggle{
+	display: none;
+}

@@ -27,14 +27,14 @@
     </head>
     <body <?php body_class(); ?>>
 <?php get_template_part('partials/marquee'); ?>
-        <!-- wrapper -->
+        <!-- container -->
         <div class="container">
 
             <!-- header -->
-            <header class="header row" role="banner">
+            <header role="banner">
                 <?php
                 if (is_front_page()):
-                    get_template_part('partials/carousel');
+                    get_template_part('partials/flexslider');
                 else :
                     get_template_part('partials/header', 'image');
                 endif;
@@ -57,21 +57,20 @@
                     </h2>
                 </div>
                 <!-- /logo -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><?php bloginfo('name');?></a>
-                </div>
-                <!-- nav -->
-                <nav class="collapse navbar-collapse" id="main-menu" role="navigation">
-                    <?php html5blank_nav(); ?>
-                </nav>
-                <!-- /nav -->
-
             </header>
             <!-- /header -->
 <main role="main">
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><?php bloginfo('name');?></a>
+</div>
+<!-- nav -->
+<nav class="container" id="main-menu" role="navigation">
+    <?php html5blank_nav(); ?>
+</nav>
+<!-- /nav -->

@@ -2,7 +2,7 @@
 <!-- section -->
 <section class="row">
 
-    <div class="col-md-8">
+    <div class="main">
 
         <h1><?php _e('', 'html5blank');
 single_cat_title();

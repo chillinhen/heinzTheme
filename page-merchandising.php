@@ -2,7 +2,7 @@
 
 
     <!-- section news -->
-    <section class="row top-fold">
+    <section class="container top-fold">
             <?php
             // latest Posts
             $args = array(
@@ -15,24 +15,24 @@
             $merchandise_query = new WP_Query($args);
             ?>
         <?php if ($merchandise_query->have_posts()) : ?>
-        <div class="col-md-8">
+        <div class="main">
                 <?php while ($merchandise_query->have_posts()) : $merchandise_query->the_post(); ?>
                 <?php get_template_part('partials/article', get_post_format());?>
                 <?php endwhile;wp_reset_postdata(); ?>
                 <?php get_template_part('partials/button');?>
         </div>
         <?php else : ?>
-        <div class="col-md-8"><?php get_template_part('partials/article', '404'); ?></div>
+        <div class="main"><?php get_template_part('partials/article', '404'); ?></div>
         <?php endif;?>
-        <aside class="col-md-4">
+        <aside class="side">
         <?php get_sidebar('home'); ?>
         </aside>
     </section>
-    <section class="row widgets">
-        <div class="col-md-8">
+    <section class="container widgets">
+        <div class="main">
 <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('sc-widgets'))  ?>
         </div>
-        <div class="col-md-4">
+        <div class="side">
 <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('nl-widget'))  ?>
         </div>
     </section>
