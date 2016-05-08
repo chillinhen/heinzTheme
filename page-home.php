@@ -18,7 +18,6 @@
                 <?php while ($latest_query->have_posts()) : $latest_query->the_post(); ?>
                 <?php get_template_part('partials/article', get_post_format());?>
                 <?php endwhile;?>
-                <?php #get_template_part('partials/button');?>
         </div>
         <?php else : ?>
         <div class="main"><?php get_template_part('partials/article', '404'); ?></div>

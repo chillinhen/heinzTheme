@@ -24,6 +24,7 @@ function hz_theme_setup() {
     load_theme_textdomain('heinzTheme', get_stylesheet_directory_uri() . '/languages');
     //new Image Formats
     add_image_size('carousel', 980, 570, array('top', 'center'));
+    add_image_size('medium', 350, 200, array('top', 'center'));
 //    add_image_size('portrait', 560, 680, true);
 //    add_image_size('sidebar',365,365,true);
 //    add_image_size('blog-detail',745,290,true);

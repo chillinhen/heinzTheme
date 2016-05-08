@@ -28,7 +28,18 @@
 	
 }
 header[role="banner"]{
-	position: relative;
+    position: relative;
+    @media screen and (min-width:$screen-sm) and (orientation:landscape) {
+        height:100vH;
+        nav {
+            background: white;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 9;
+            margin-bottom: -10px;
+        }
+    }
 }
 .logo{
     background: #fff;
@@ -37,8 +48,9 @@ header[role="banner"]{
     @include transform(scale(0.75) rotate(-3deg));
     @include transform-origin(top center);
     position: absolute;
-    top: 75%;
-    width: 100%;
+    bottom: 2em;
+    width: 70%;
+    left:15%;
     z-index: 99;
 }
 body > footer {
@@ -46,6 +58,11 @@ body > footer {
     background: #292B33;
     * {color:white;}
 }
-main[role="main"] > section{
-	margin:0 0 20vH 0;
+main[role="main"] {
+    padding-top:2 * $vgrid;
+    > section{
+        margin:0 0 20vH 0;
+
+    }
 }
+

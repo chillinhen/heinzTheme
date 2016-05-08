@@ -1,8 +1,11 @@
-<?php $header_image = get_header_image();
-if (!empty($header_image)) {
+<?php $header_image = get_field('header_bild','option');
+ if (!empty($header_image)) :
+    // vars
+    $url = $header_image['url'];
+    $title = $header_image['title'];
+    $alt = $header_image['alt'];
     ?>
-    <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-        <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-    </a>
-<?php
-} // end if ( ! empty( $header_image ) ) ?>
+<a class="header-image" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo $title; ?>">
+    	<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
+</a>
+<?php endif; ?>

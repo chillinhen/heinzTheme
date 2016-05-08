@@ -1,6 +1,6 @@
 #main-menu{
-	font-family: $heading-font-family;
-    @include padding(10vh null 10vH null);
+    font-family: $heading-font-family;
+    @include padding(2em null 3em null);
     text-transform:uppercase;
     font-weight: bolder;
     font-size: rem(36);
@@ -19,5 +19,5 @@
     }
 }
 .navbar-toggle{
-	display: none;
+    display: none;
 }

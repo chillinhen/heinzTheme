@@ -1,27 +1,9 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
-
-body:before {
-  background-image: -webkit-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100.0%, transparent 100.0%);
-  background-image: -moz-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100.0%, transparent 100.0%);
-  background-image: -ms-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100.0%, transparent 100.0%);
-  background-image: -o-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100.0%, transparent 100.0%);
-  background-image: linear-gradient(to left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100.0%, transparent 100.0%);
-  content: "";
-  display: inline-block;
-  height: 100%;
-  left: 0;
-  margin: 0 auto;
-  max-width: 1200px;
-  opacity: 0.4;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  z-index: -1; }
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -338,6 +320,13 @@ h6 {
   h5 a,
   h6 a {
     color: inherit; }
+  .logo h1, .logo
+  h2, .logo
+  h3, .logo
+  h4, .logo
+  h5, .logo
+  h6 {
+    text-align: center; }
   article h1, article
   h2, article
   h3, article
@@ -384,24 +373,10 @@ hr {
   padding: 0 !important;
   border: 0 !important; }
 
-.carousel-indicators {
-  text-indent: -9999px;
-  display: block;
-  overflow: hidden; }
-
 /*** Mixins & Placeholders ***/
 /**** caret ****/
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
 /* Mediaqueries breakpoints */
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 25.03.2016, 15:48:35
-    Author     : chilliscope
-*/
 .container {
   max-width: 980px;
   margin-left: auto;
@@ -410,6 +385,8 @@ and open the template in the editor.
     clear: both;
     content: "";
     display: table; }
+  .container > section {
+    margin-bottom: 40px; }
 
 .main {
   float: left;
@@ -457,59 +434,112 @@ and open the template in the editor.
   .flex-control-nav .flex-control-paging a {
     background: #fff; }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 25.03.2016, 15:49:17
-    Author     : chilliscope
-*/
-.carousel-control {
-  opacity: .3; }
-  @media screen and (max-width: 767px) {
-    .carousel-control {
-      display: none; } }
-  .carousel-control:hover {
-    opacity: .65; }
-  .carousel-control.right {
-    background-color: transparent;
-    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.7));
-    background-image: linear-gradient(to right,transparent, rgba(0, 0, 0, 0.7)); }
-  .carousel-control.left {
-    background-color: transparent;
-    background-image: -webkit-linear-gradient(right, transparent, rgba(0, 0, 0, 0.7));
-    background-image: linear-gradient(to left,transparent, rgba(0, 0, 0, 0.7)); }
-  .carousel-control .fa {
-    color: white;
-    display: block;
-    line-height: 1; }
-    @media screen and (min-width: 768px) {
-      .carousel-control .fa {
-        height: 60px;
-        font-size: 60px;
-        margin-top: 250px; } }
-  .carousel-control span {
-    display: none; }
+body {
+  color: #333;
+  font-family: "Quattrocento Sans", "Arial", "Helvetica", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5; }
 
-.carousel-indicators {
-  position: absolute;
-  bottom: auto;
-  z-index: 99; }
-  .carousel-indicators li {
-    background: white;
-    width: 20px;
-    height: 20px;
-    float: left;
-    display: inline-block;
-    margin: 0 .8em;
-    border: 0; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    color: inherit; }
+  .logo h1, .logo
+  h2, .logo
+  h3, .logo
+  h4, .logo
+  h5, .logo
+  h6 {
+    text-align: center; }
+  article h1, article
+  h2, article
+  h3, article
+  h4, article
+  h5, article
+  h6 {
+    padding-bottom: .5em; }
+
+h1, h2 {
+  font-size: 3rem; }
+
+h3, h4 {
+  font-size: 2.25rem; }
+
+h5, h6 {
+  font-size: 1.5rem; }
+
+p {
+  margin: 0 0 0.75em;
+  font-size: 1em; }
+
+a {
+  text-decoration: none;
+  transition: color 150ms ease; }
+  a:active, a:focus, a:hover {
+    color: #68737d; }
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0; }
+
+form input, form select, form textarea,
+form button, form .button,
+form input[type="button"],
+form input[type="reset"],
+form input[type="submit"] {
+  font-size: 1em; }
+.newsletter-widget form {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto; }
+  .newsletter-widget form::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .newsletter-widget form p input {
+    width: 100%;
+    padding: .5em 1em; }
+    .newsletter-widget form p input.newsletter-submit {
+      text-align: left; }
+    .newsletter-widget form p input[type="checkbox"] {
+      float: left;
+      width: auto; }
+
+.header-image {
+  height: 100vH;
+  display: block;
+  text-align: center;
+  width: 100%;
+  overflow: hidden; }
+  .header-image > img {
+    max-width: 100%; }
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .flexslider .item {
+    height: calc(100vH);
+    overflow: hidden; }
+    .flexslider .item img {
+      margin: 0 auto; } }
 
 #main-menu {
   font-family: "Oswald", sans-serif;
-  padding-top: 10vh;
-  padding-bottom: 10vH;
+  padding-top: 2em;
+  padding-bottom: 3em;
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 2.25rem; }
@@ -527,15 +557,128 @@ and open the template in the editor.
 .navbar-toggle {
   display: none; }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 25.03.2016, 15:49:54
-    Author     : chilliscope
-*/
+.widget_em_widget li a {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.blog + aside {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto; }
+  .blog + aside::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .blog + aside .sidebar-widget {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    .blog + aside .sidebar-widget:last-child {
+      margin-right: 0; }
+
+.sidebar-widget > [class*="widget_"] {
+  margin-bottom: 3em; }
+.sidebar-widget .search {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto; }
+  .sidebar-widget .search::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .sidebar-widget .search > .search-input {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .sidebar-widget .search > .search-input:last-child {
+      margin-right: 0; }
+  .sidebar-widget .search > .search-submit {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .sidebar-widget .search > .search-submit:last-child {
+      margin-right: 0; }
+
+.home article.kaufen {
+  background-repeat: no-repeat;
+  background-position: 0% 20%;
+  background-size: contain;
+  padding: 210px 0 0 0; }
+article .thumbnail {
+  display: block;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 1em; }
+  article .thumbnail img {
+    width: auto;
+    height: 100%; }
+article footer {
+  padding-top: .5em;
+  margin-top: 1em;
+  border-top: 1px dotted #4F5B73; }
+  article footer + .comments {
+    margin-top: 40px; }
+article a.view-article {
+  color: #dd3333;
+  font-weight: 600; }
+article .meta * {
+  color: #4F5B73; }
+article .meta span {
+  display: inline-block;
+  margin: 0 .5em 0 0; }
+  article .meta span:before {
+    font-family: 'FontAwesome';
+    content: "";
+    padding-right: 0.3em;
+    opacity: 1;
+    margin-left: 0;
+    font-size: small; }
+  article .meta span.date:before {
+    content: "\f133"; }
+  article .meta span.category:before {
+    content: "\f187"; }
+  article .meta span.tags:before {
+    content: "\f02b"; }
+  article .meta span.author:before {
+    content: "\f007"; }
+  article .meta span.meta-comments:before {
+    content: "\f075"; }
+  article .meta span.edit:before {
+    content: "\f040"; }
+  article .meta span > span {
+    display: none; }
+
+.blogposts {
+  -webkit-columns: 3 6em;
+  -moz-columns: 3 6em;
+  columns: 3 6em;
+  -webkit-column-gap: 2em;
+  -moz-column-gap: 2em;
+  column-gap: 2em; }
+  .blogposts > article {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 4em; }
+
+.pagination {
+  text-align: center;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #4F5B73;
+  padding: 20px 0;
+  margin: 40px 0; }
+  .pagination .page-numbers {
+    display: inline-block;
+    padding: 0 1em;
+    text-align: center; }
+    .pagination .page-numbers.current {
+      font-weight: bold;
+      color: #000; }
+
 #marquee {
   background: #4F5B73;
   position: fixed;
@@ -564,6 +707,16 @@ and open the template in the editor.
 
 header[role="banner"] {
   position: relative; }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    header[role="banner"] {
+      height: 100vH; }
+      header[role="banner"] nav {
+        background: white;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        z-index: 9;
+        margin-bottom: -10px; } }
 
 .logo {
   background: #fff;
@@ -582,8 +735,9 @@ header[role="banner"] {
   -o-transform-origin: top center;
   transform-origin: top center;
   position: absolute;
-  top: 75%;
-  width: 100%;
+  bottom: 2em;
+  width: 70%;
+  left: 15%;
   z-index: 99; }
 
 body > footer {
@@ -592,8 +746,10 @@ body > footer {
   body > footer * {
     color: white; }
 
-main[role="main"] > section {
-  margin: 0 0 20vH 0; }
+main[role="main"] {
+  padding-top: 40px; }
+  main[role="main"] > section {
+    margin: 0 0 20vH 0; }
 
 @media screen and (min-width: 768px) {
   .navbar-brand {

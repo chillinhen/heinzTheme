@@ -1,4 +1,6 @@
-		<section class="widgets">
+        <?php
+                if (is_front_page()): ?>		
+<section class="widgets">
 			<div class="main">
 			    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('fb-widget'))  ?>
 			</div>
@@ -15,8 +17,9 @@
 				</div>
 			<?php endif;?>
 		</section>
-	</main>	
+<?php endif;?>
 </div>
+	</main>	
 <!-- footer -->
 <footer class="footer" role="contentinfo">
 	<div class="container">
@@ -25,7 +28,7 @@
 	<div class="container">
 	    <!-- copyright -->
 	    <p class="copyright">
-	        &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
+	        &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'heinzTheme'); ?>
 	        <a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
 	    </p>
 	    <!-- /copyright -->

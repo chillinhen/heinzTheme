@@ -7,6 +7,9 @@ $max-width: 980px;
 .container {
     @include outer-container;
     @extend %clearfix;
+    > section {
+        margin-bottom: 2 * $vgrid;
+    }
 }
 .main {
     @include span-columns(8);

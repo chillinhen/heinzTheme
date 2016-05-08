@@ -1,5 +1,77 @@
-article{
-	footer {
+article{   
+    .home &.kaufen{
+        background-repeat: no-repeat;
+        background-position: 0% 20%;
+        background-size: contain;
+        padding: 200px + $vgrid * 0.5 0 0 0;
+    }
+    .thumbnail{
+        display: block;
+        height:200px;
+        overflow: hidden;
+        margin-bottom:1em;
+        img {
+            width: auto;
+            height:100%;
+        }
+    }
+    footer {
+        padding-top: .5em;
+        margin-top:1em;
+        border-top:1px dotted $primary-color;
 
-	}
+        & + .comments{
+            margin-top: 2 * $vgrid;
+        }
+    }
+    a.view-article{
+        color:$accentColor;
+        font-weight: 600;
+    }
+    .meta {
+        *{
+            color:$primary-color;
+        }
+        span {
+            display:inline-block;
+            margin:0 .5em 0 0;
+            &:before {@include icon-style("\f0da",.3em,1,0,small);}
+            &.date:before {content: "\f133"};
+            &.category:before{content: "\f187"};
+            &.tags:before{content: "\f02b"};
+            &.author:before{content: "\f007";};
+            &.meta-comments:before{content: "\f075"};
+            &.edit:before{content:"\f040";}
+            > span {display:none;}
+
+        }
+
+    }
+}
+.blogposts {
+    @include columns(3 6em);
+    @include column-gap(2em);
+    > article {
+        @include page-break(avoid);
+        margin-bottom: 4em;
+    }
+}
+.pagination{
+    text-align: center;
+    border:{
+        width:1px 0;
+        style:solid;
+        color:$primary-color;
+    }
+    padding:$vgrid 0;
+    margin:2*$vgrid 0;
+    .page-numbers{
+        display:inline-block;
+        padding:0 1em;
+        text-align: center;
+        &.current {
+            font-weight: bold;
+            color:#000;
+        }
+    }
 }

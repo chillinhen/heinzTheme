@@ -4,7 +4,7 @@
 
     <div class="main">
 
-        <h1><?php _e('', 'html5blank');
+        <h1><?php _e('', 'heinzTheme');
 single_cat_title();
 ?></h1>
         <?php

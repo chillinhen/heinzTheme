@@ -1,10 +1,25 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 25.03.2016, 15:49:17
-    Author     : chilliscope
-*/
-
+form{
+    input, select, textarea,
+    button, .button,
+    input[type="button"], 
+    input[type="reset"], 
+    input[type="submit"] 
+    {
+        font-size: 1em;
+    }
+    .newsletter-widget & {
+        
+        @include outer-container;
+        p {
+            input {
+                width:100%;
+                padding:.5em 1em;
+                &.newsletter-submit{text-align: left;}
+                    &[type="checkbox"]{
+                        float:left;
+                        width:auto;
+    }
+            }
+        }
+    }
+}

@@ -5,12 +5,9 @@
     <?php if (have_posts()): ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="main">
-                <!-- article -->
+                <!-- article -->    
                 <?php get_template_part('partials/article', 'full'); ?>
                 <!-- /article -->
-
-
-
             </div>
         <?php endwhile; ?>
         <div class="side"><?php get_sidebar(); ?></div>

@@ -1,41 +1,21 @@
-.carousel-control {
-    @media screen and (max-width:$screen-sm - 1){
-        display:none;
+.header-image{
+    height:100vH;
+    display: block;
+    text-align: center;
+    width:100%;
+    overflow:hidden;
+    > img {
+        max-width: 100%;
     }
-    opacity: .3;
-    &:hover {
-        opacity: .65;
-    }
-    &.right{
-        @include linear-gradient(to right, transparent, rgba( #000, .7 ));
-    }
-    &.left{
-        @include linear-gradient(to left, transparent, rgba( #000, .7 ));
-    }
-    .fa {
-        color:white;
-        display: block;
-        line-height: 1;
-        @media screen and (min-width:$screen-sm){
-            height:60px;
-            font-size:60px;
-            margin-top:250px;
-        }
-    }
-    span {display:none;}
 }
-.carousel-indicators {
-    position:absolute;
-    @extend %text-indent;
-    bottom:auto;
-    z-index:99;
-    li {
-        background: white;
-        width:20px;
-        height:20px;
-        float: left;
-        display: inline-block;
-        margin:0 .8em;
-        border:0;
+.flexslider{
+    .item{
+        @media screen and (min-width:$screen-sm) and (orientation:landscape){
+            height:calc(100vH);
+            overflow:hidden;
+            img {
+                margin:0 auto;
+            }
+        }
     }
 }

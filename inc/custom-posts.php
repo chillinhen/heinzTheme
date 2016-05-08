@@ -24,6 +24,31 @@ function my_custom_post_carousel() {
         "supports" => array("title", "revisions", "thumbnail"), "taxonomies" => array('category', 'post_tag'));
     register_post_type("carousel", $args);
 }
+add_action('init', 'my_custom_post_member');
+function my_custom_post_member() {
+    $labels = array(
+        "name" => "Mitglieder",
+        "singular_name" => "Mitglied",
+    );
+
+    $args = array(
+        "labels" => $labels,
+        "description" => "alle Mitglieder mit Bild & Text",
+        "public" => true,
+        'menu_position' => 5,
+        "show_ui" => true,
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array("slug" => "member", "with_front" => true),
+        "query_var" => true,
+        "supports" => array("title", "revisions", "thumbnail"), "taxonomies" => array('category', 'post_tag'));
+    register_post_type("member", $args);
+}
+
 function my_custom_post_merchandise() {
   $labels = array(
     'name'               => _x( 'Merchandising', 'post type general name' ),
