@@ -5,7 +5,8 @@
     <?php if (have_posts()): ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="main">
-                <!-- article -->    
+                <!-- article -->  
+                <h2>hallo</h2>
                 <?php get_template_part('partials/article', 'full'); ?>
                 <!-- /article -->
             </div>

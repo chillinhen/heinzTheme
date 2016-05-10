@@ -15,7 +15,7 @@
             $member_query = new WP_Query($args);
             ?>
         <?php if ($member_query->have_posts()) : ?>
-        <div class="main">
+        <div class="main blogposts">
                 <?php while ($member_query->have_posts()) : $member_query->the_post(); ?>
                 <?php get_template_part('partials/article', get_post_format());?>
                 <?php endwhile;wp_reset_postdata(); ?>

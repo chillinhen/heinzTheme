@@ -51,6 +51,9 @@ article{
 .blogposts {
     @include columns(3 6em);
     @include column-gap(2em);
+    .page-template-page-members & {
+        @include columns(2 6em);
+    }
     > article {
         @include page-break(avoid);
         margin-bottom: 4em;

@@ -658,6 +658,10 @@ article .meta span {
   -webkit-column-gap: 2em;
   -moz-column-gap: 2em;
   column-gap: 2em; }
+  .page-template-page-members .blogposts {
+    -webkit-columns: 2 6em;
+    -moz-columns: 2 6em;
+    columns: 2 6em; }
   .blogposts > article {
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
