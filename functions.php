@@ -27,7 +27,7 @@ function hz_theme_setup() {
     add_image_size('medium', 350, 200, array('top', 'center'));
 //    add_image_size('portrait', 560, 680, true);
 //    add_image_size('sidebar',365,365,true);
-//    add_image_size('blog-detail',745,290,true);
+    add_image_size('blog-detail',745,290,true);
 //    
     //modernizr
         add_action('wp_enqueue_scripts', 'register_modernizr');

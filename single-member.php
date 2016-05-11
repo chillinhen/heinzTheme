@@ -6,7 +6,7 @@
         <?php while (have_posts()) : the_post(); ?>
             <div class="main">
                 <!-- article -->    
-                <?php get_template_part('partials/article', 'full'); ?>
+                <?php get_template_part('partials/article', 'member'); ?>
                 <!-- /article -->
             </div>
         <?php endwhile; ?>
