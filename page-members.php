@@ -15,9 +15,9 @@
             $member_query = new WP_Query($args);
             ?>
         <?php if ($member_query->have_posts()) : ?>
-        <div class="main blogposts">
+        <div class="main">
                 <?php while ($member_query->have_posts()) : $member_query->the_post(); ?>
-                <?php get_template_part('partials/article', get_post_format());?>
+                <?php get_template_part('partials/card','member');?>
                 <?php endwhile;wp_reset_postdata(); ?>
                 <?php get_template_part('partials/button');?>
         </div>

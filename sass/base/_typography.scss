@@ -22,6 +22,14 @@ h6 {
   article & {
   padding-bottom: .5em;
   }
+  .type-member & {
+      text-align: center;
+      padding:1em 0;
+  }
+  .single-member .side &{
+      text-align: center;
+      padding-bottom: .5em 0;
+  }
 
 }
 h1, h2 {

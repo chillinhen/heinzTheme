@@ -13,8 +13,24 @@
             margin:0 1em 0 0;
             a {
                 color:black;
-                &:hover{text-decoration: none;}
+                &:hover{
+                    text-decoration: none;
+                    position:relative;
+                    color:rgba(0,0,0,.5);
+                    &:after{
+                        content:' ';
+                        background:transparent url(../svg/hover.svg) 25% 50% no-repeat;
+                        background-size: contain;
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        right:0;
+                        bottom:0;
+                    }
+                
+                }
             }
+            &.sounds-videos a:hover{background-size: cover;}
         }
     }
 }

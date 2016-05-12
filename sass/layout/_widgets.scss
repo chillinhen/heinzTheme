@@ -27,3 +27,15 @@
        }
     }
 }
+.comments{
+    .comment-body{
+        @include outer-container;
+        > .comment-author{
+            @include span-columns(4);
+        }
+        > .comment-meta{
+            @include span-columns(8);
+        }
+
+    }
+}

@@ -4,9 +4,10 @@
 
     <div class="main">
 
-        <h1><?php _e('', 'heinzTheme');
-single_cat_title();
-?></h1>
+        <h1><?php
+            _e('', 'heinzTheme');
+            single_cat_title();
+            ?></h1>
         <?php
         if (have_posts()): while (have_posts()) : the_post();
                 get_template_part('partials/article', get_post_format());
@@ -23,4 +24,4 @@ single_cat_title();
     </div>
     <!-- /section -->
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

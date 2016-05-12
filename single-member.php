@@ -10,7 +10,7 @@
                 <!-- /article -->
             </div>
         <?php endwhile; ?>
-        <div class="side">
+        <aside>
             <?php
             $posts = get_field('andere_mitglieder');
 
@@ -20,19 +20,14 @@
                     <?php foreach ($posts as $post): // variable must be called $post (IMPORTANT) ?>
                         <?php setup_postdata($post); ?>
                         <li>
-                            <?php #if (has_post_thumbnail()) : // Check if thumbnail exists ?>
-                                <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <?php the_post_thumbnail('medium'); // ?>
-                                    <?php the_title(); ?>
-                                </a>
-                            <?php #endif; ?>
+                            <?php get_template_part('partials/card','member');?>
 
                         </li>
                     <?php endforeach; ?>
                 </ul>
                 <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
             <?php endif; ?>
-        </div>
+        </aside>
 
     <?php else: ?>
 

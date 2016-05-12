@@ -45,7 +45,7 @@ function my_custom_post_member() {
         "hierarchical" => false,
         "rewrite" => array("slug" => "member", "with_front" => true),
         "query_var" => true,
-        "supports" => array("title", "revisions", "thumbnail"), "taxonomies" => array('category', 'post_tag'));
+        "supports" => array('title', 'editor', 'thumbnail', 'excerpt'), "taxonomies" => array('category', 'post_tag'));
     register_post_type("member", $args);
 }
 

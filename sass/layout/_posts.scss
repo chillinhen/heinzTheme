@@ -5,14 +5,28 @@ article{
         background-size: contain;
         padding: 200px + $vgrid * 0.5 0 0 0;
     }
+    
     .thumbnail{
         display: block;
         height:200px;
         overflow: hidden;
         margin-bottom:1em;
-        img {
-            width: auto;
-            height:100%;
+
+    }
+    &.type-member{
+        .thumbnail{
+        	background-size: cover;
+        	background-repeat: no-repeat;
+        	background-position: center center;
+				img {
+					height:200px;
+					width: auto;
+				}
+            &:hover{
+            	img {
+            	opacity: 0;
+            	}
+            }
         }
     }
     footer {
@@ -46,17 +60,6 @@ article{
 
         }
 
-    }
-}
-.blogposts {
-    @include columns(3 6em);
-    @include column-gap(2em);
-    .page-template-page-members & {
-        @include columns(2 6em);
-    }
-    > article {
-        @include page-break(avoid);
-        margin-bottom: 4em;
     }
 }
 .pagination{

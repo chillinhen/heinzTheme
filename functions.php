@@ -27,7 +27,7 @@ function hz_theme_setup() {
     add_image_size('medium', 350, 200, array('top', 'center'));
 //    add_image_size('portrait', 560, 680, true);
 //    add_image_size('sidebar',365,365,true);
-    add_image_size('blog-detail',745,290,true);
+    add_image_size('blog-detail',750,465,array( 'top', 'center') );
 //    
     //modernizr
         add_action('wp_enqueue_scripts', 'register_modernizr');
@@ -46,6 +46,12 @@ function hz_theme_setup() {
                 wp_enqueue_script('modernizr');
                             wp_register_script('flexslider',get_stylesheet_directory_uri().'/flexslider/jquery.flexslider.js',array('jquery'),false,true);
             wp_enqueue_script('flexslider');
+             // lightbox
+            wp_register_script('nivo-lightbox', get_stylesheet_directory_uri() . '/lightbox/nivo-lightbox.min.js', array('jquery'), false, false);
+            wp_enqueue_script('nivo-lightbox');
+            
+            wp_register_script('custom-head', get_stylesheet_directory_uri() . '/js/custom-head.js', array('jquery'), false, false);
+             wp_enqueue_script('custom-head');
 
                 wp_register_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery','flexslider'), '1.2', true);
                  wp_enqueue_script('custom');
@@ -61,6 +67,12 @@ function hz_theme_setup() {
         wp_enqueue_style('parent-style'); // Enqueue it!
         wp_register_style('flexslider',get_stylesheet_directory_uri().'/flexslider/flexslider.css',array(),false,'screen');
         wp_enqueue_style('flexslider');
+        
+              //lightbox
+            wp_register_style('nivo-lightbox', get_stylesheet_directory_uri() . '/lightbox/nivo-lightbox.css', 'style', '1.0', 'all', array());
+            wp_enqueue_style('nivo-lightbox');
+            wp_register_style('nivo-theme', get_stylesheet_directory_uri() . '/lightbox/themes/default/default.css', 'style', '1.0', 'all', array());
+            wp_enqueue_style('nivo-theme');
 
         wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento+Sans:400,700,700italic,400italic', array(),'all');
         wp_enqueue_style('googlefont'); // Enqueue it!
