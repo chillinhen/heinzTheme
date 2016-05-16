@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
     });
     
     //elastic iframes
-       $('iframe').each(function(){
+       $('div:not(".soundcloudIsGold") > iframe').each(function(){
        	$(this).wrap('<div class="iframe-elastic"></div>');
        });
 });

@@ -1,5 +1,12 @@
 .header-image{
-    height:100vH;
+	@media screen and (max-width:$screen-sm - 1) and (orientation:landscape){
+		height:50vH;
+	}
+	
+	@media screen and (min-width:$screen-sm) and (orientation:landscape){
+		height:100vH;
+	}
+    
     display: block;
     text-align: center;
     width:100%;

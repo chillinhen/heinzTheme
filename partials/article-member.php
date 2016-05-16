@@ -12,13 +12,19 @@ if( !empty($image) ):
 	$caption = $image['caption'];
 
 	// thumbnail
-	$size = 'blog-detail';
-	$thumb = $image['sizes'][ $size ];
-	$width = $image['sizes'][ $size . '-width' ];
-	$height = $image['sizes'][ $size . '-height' ];?>
+	$sizeLarge = 'blog-detail';
+	$thumbLarge = $image['sizes'][ $sizeLarge];
+	
+	$sizeMedium = 'medium';
+	$thumbMedium = $image['sizes'][ $sizeMedium];
+	
+	$sizeSmall = 'small';
+	$thumbSmall = $image['sizes'][ $sizeSmall];
+	
+	?>
 
 	<a class="showLightbox" href="<?php echo $url = $image['url'];?>" title="<?php echo $url = $image['title'];?>">
-	<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+	<img src="<?php echo $thumbLarge; ?>" alt="<?php echo $alt; ?>" srcset="<?php echo $thumbSmall; ?> 320w, <?php echo $thumbMedium; ?> 600w, <?php echo $thumbLarge; ?> 900w"/>
 	</a>
 
 <?php endif; ?>
@@ -35,3 +41,7 @@ if( !empty($image) ):
     </footer>
 
 </article>
+<!--
+srcset="small.jpg 320w, medium.jpg 600w, large.jpg 900w"
+
+-->

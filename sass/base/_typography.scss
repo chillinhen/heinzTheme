@@ -4,7 +4,12 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
-
+/*h1,h2{
+	  font-family: $heading-font-family;
+}
+h3,h4, h5, h6{
+	  font-family: $base-font-family;
+}*/
 h1,
 h2,
 h3,
@@ -37,9 +42,11 @@ h1, h2 {
 }
 h3, h4 {
 	font-size: rem(36);
+	font-weight: 400;
 }
 h5, h6{
 	font-size: rem(24);
+	font-weight: 400;
 }
 
 p {
