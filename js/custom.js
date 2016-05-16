@@ -19,12 +19,17 @@ jQuery(document).ready(function ($) {
         errorMessage: 'The requested content cannot be loaded. Please try again later.' // Error message when content can't be loaded 
     });
 
-    $('..thumbnail a').each(function () {
+    $('.thumbnail a').each(function () {
         var gallery = $(this).parent().parent().parent('div');
         var galleryID = gallery.attr('id');
         //alert(galleryID);
         $(this).attr('data-lightbox-gallery', galleryID);
     });
+    
+    //elastic iframes
+       $('iframe').each(function(){
+       	$(this).wrap('<div class="iframe-elastic"></div>');
+       });
 });
 jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() > 100) {

@@ -150,6 +150,7 @@ function hz_theme_setup() {
             'after_title' => '</h3>'
         ));
     }
+    add_theme_support( 'post-formats', array( 'video', 'audio','gallery' ) );
 }
 
 
