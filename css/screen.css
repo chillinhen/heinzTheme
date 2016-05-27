@@ -376,6 +376,7 @@ hr {
 /*** Mixins & Placeholders ***/
 /**** caret ****/
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
+/******* SVG *********/
 /* Mediaqueries breakpoints */
 /* Helper Classes */
 @media screen and (max-width: 480px) {
@@ -673,6 +674,14 @@ form input[type="submit"] {
 .navbar-toggle {
   display: none; }
 
+.button-section {
+  background: transparent url("../svg/kermit.svg") center bottom no-repeat;
+  background-size: contain;
+  height: 200px; }
+  .button-section .cta {
+    background-color: transparent !important;
+    color: #000 !important; }
+
 .widget_em_widget li a {
   font-weight: bold;
   text-transform: uppercase; }
@@ -903,21 +912,29 @@ header[role="banner"] {
   -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
   padding: 2em;
-  -webkit-transform: scale(0.75) rotate(-3deg);
-  -moz-transform: scale(0.75) rotate(-3deg);
-  -ms-transform: scale(0.75) rotate(-3deg);
-  -o-transform: scale(0.75) rotate(-3deg);
-  transform: scale(0.75) rotate(-3deg);
   -webkit-transform-origin: top center;
   -moz-transform-origin: top center;
   -ms-transform-origin: top center;
   -o-transform-origin: top center;
   transform-origin: top center;
   position: absolute;
-  bottom: 2em;
   width: 70%;
   left: 15%;
   z-index: 99; }
+  body.home .logo {
+    -webkit-transform: scale(0.75) rotate(-3deg);
+    -moz-transform: scale(0.75) rotate(-3deg);
+    -ms-transform: scale(0.75) rotate(-3deg);
+    -o-transform: scale(0.75) rotate(-3deg);
+    transform: scale(0.75) rotate(-3deg);
+    bottom: 2em; }
+  body:not(.home) .logo {
+    -webkit-transform: scale(0.5) rotate(-3deg);
+    -moz-transform: scale(0.5) rotate(-3deg);
+    -ms-transform: scale(0.5) rotate(-3deg);
+    -o-transform: scale(0.5) rotate(-3deg);
+    transform: scale(0.5) rotate(-3deg);
+    bottom: -2em; }
 
 body > footer {
   padding: 2em 0 0 0;

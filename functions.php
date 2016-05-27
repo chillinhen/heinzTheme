@@ -151,6 +151,24 @@ function hz_theme_setup() {
         ));
     }
     add_theme_support( 'post-formats', array( 'video', 'audio','gallery' ) );
+        // Add Support for Custom Backgrounds - Uncomment below if you're going to use
+        add_theme_support('custom-background', array(
+    	'default-color' => 'FFF',
+    	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
+        ));
+    
+        // Add Support for Custom Header - Uncomment below if you're going to use
+        add_theme_support('custom-header', array(
+    	'default-image'			=> get_stylesheet_directory_uri() . '/img/headers/default.jpg',
+    	'header-text'			=> false,
+    	'default-text-color'		=> '000',
+    	'width'				=> 1920,
+    	'height'			=> 1040,
+    	'random-default'		=> true,
+    	'wp-head-callback'		=> $wphead_cb,
+    	'admin-head-callback'		=> $adminhead_cb,
+    	'admin-preview-callback'	=> $adminpreview_cb
+        ));
 }
 
 

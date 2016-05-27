@@ -45,10 +45,17 @@ header[role="banner"]{
     background: #fff;
     @include shadow;
     padding: 2em;
-    @include transform(scale(0.75) rotate(-3deg));
+    body.home & {
+    	@include transform(scale(0.75) rotate(-3deg));
+    	bottom: 2em;
+    }
+    body:not(.home) & {
+    	@include transform(scale(0.5) rotate(-3deg));
+    	bottom: -2em;
+    	}
     @include transform-origin(top center);
     position: absolute;
-    bottom: 2em;
+
     width: 70%;
     left:15%;
     z-index: 99;
