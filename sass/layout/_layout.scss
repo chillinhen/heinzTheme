@@ -8,23 +8,54 @@
 	@include shadow;
 	font-size: 1.2em;
 	
-	
-	&.slideIn{
-		top: 0;
-		@include transition(all 200ms ease-in-out);
-	}
+        &[class*="slide"]{@include transition(all 200ms ease-in-out);}
+        &.slideIn{
+            top: 0;
 
-	p{
+        }
+        &.slideOut{
+            top: -100px;
+        }
+
+	ul{
 		padding: .5em 2em;
 		font-weight: bold;
 		font-size: em(14);
 		text-align: center;
+                width:95%;
+                margin:0 auto;
+                
+                li{
+                    display:inline-block;
+                    &.no-event{
+                        width: 100%;
+                        display:block;
+                        text-align: center;
+                    }
+                    &:after{
+                        content:' +++ ';
+                        margin:0 .5em;
+                    }
+                    &.intro:after,
+                    &.end:after,
+                    &.close:after{
+                        content:'';
+                    }
+                    &.close {
+                        float:right;
+                        a {
+                            font-size: 1.2em;
+                            font-weight: bold;
+                        }
+                    }
+                }
 	}
 	
 	*{color: white;}
 	+.container{
 		margin-top: 50px;
 	}
+        
 	
 }
 header[role="banner"]{
@@ -51,7 +82,7 @@ header[role="banner"]{
     }
     body:not(.home) & {
     	@include transform(scale(0.5) rotate(-3deg));
-    	bottom: -2em;
+    	bottom: 0;
     	}
     @include transform-origin(top center);
     position: absolute;

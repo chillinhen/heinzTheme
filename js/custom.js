@@ -1,6 +1,19 @@
 jQuery(document).ready(function ($) {
-    //alert('hallo');
-
+    //close marquee
+    $('#marquee a.close').click(function(){
+        $('#marquee').removeClass('slideIn').addClass('slideOut');
+    });
+    // jumpto main menu
+    var anker = 'main-menu';
+    var currentlink = $('li:not(.kaufen).menu-item > a');
+    
+    currentlink.click(function(){
+        var link = $(this).attr('href');
+        var jumpto = link + '#' + anker;
+        //alert(jumpto);
+        $(this).attr('href',jumpto);
+    });
+    
     $('.flexslider').flexslider({
         animation: "fade"
     });

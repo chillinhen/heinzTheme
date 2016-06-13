@@ -89,6 +89,14 @@ function hz_theme_setup() {
     
     
     if (function_exists('register_sidebar')) {
+        // Define Marquee
+        register_sidebar(array(
+            'name' => __('Laufschrift', 'heinzTheme'),
+            'description' => __('Hier die nächste Veranstaltung als Laufschrift...', 'heinzTheme'),
+            'id' => 'marquee',
+            'before_widget' => '<div id="marquee" class="%2$s">',
+            'after_widget' => '</div>'
+        ));
         // Define Sidebar Home
         register_sidebar(array(
             'name' => __('Sidebar Home', 'heinzTheme'),

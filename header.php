@@ -27,9 +27,9 @@
     </head>
     <body <?php body_class(); ?>>
         <?php
-                if (is_front_page()): 
-        get_template_part('partials/marquee');
-                endif; ?>
+                if (is_front_page()): ?>
+        <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('marquee'))  ?>
+               <?php  endif; ?>
         <!-- container -->
        
 

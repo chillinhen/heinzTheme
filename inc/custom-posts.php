@@ -27,13 +27,13 @@ function my_custom_post_carousel() {
 add_action('init', 'my_custom_post_member');
 function my_custom_post_member() {
     $labels = array(
-        "name" => "Mitglieder",
-        "singular_name" => "Mitglied",
+        "name" => "Heinze",
+        "singular_name" => "Heinz",
     );
 
     $args = array(
         "labels" => $labels,
-        "description" => "alle Mitglieder mit Bild & Text",
+        "description" => "alle Heinze mit Bild & Text",
         "public" => true,
         'menu_position' => 5,
         "show_ui" => true,
