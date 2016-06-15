@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     //close marquee
-    $('#marquee a.close').click(function(){
-        $('#marquee').removeClass('slideIn').addClass('slideOut');
+    $('#marquee .close').click(function(){
+        $('#marquee').removeClass('slideIn').addClass('fadeOut');
     });
     // jumpto main menu
     var anker = 'main-menu';

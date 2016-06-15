@@ -12,8 +12,17 @@
 
 
             </div>
-        <?php endwhile; ?>
-        <div class="side"><?php get_sidebar(); ?></div>
+        <?php endwhile;?>
+        
+        <div class="side">
+        	<?php 
+        	if(is_page( 'heinz-live' )) :
+        		get_sidebar('events'); 
+        	else :
+        		get_sidebar(); 
+        	endif;
+        	?>
+        </div>
 
     <?php else: ?>
 

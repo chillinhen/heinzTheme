@@ -5,15 +5,21 @@
 	left:0;
 	right:0;
 	z-index: 99999;
+	opacity:.9;
 	@include shadow;
 	font-size: 1.2em;
 	
         &[class*="slide"]{@include transition(all 200ms ease-in-out);}
+        .admin-bar &.slideIn{
+                    top: 30px;
+        
+                }
         &.slideIn{
             top: 0;
 
         }
-        &.slideOut{
+        &.fadeOut{
+            opacity:0;
             top: -100px;
         }
 
@@ -43,10 +49,9 @@
                     }
                     &.close {
                         float:right;
-                        a {
-                            font-size: 1.2em;
-                            font-weight: bold;
-                        }
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        &:hover {cursor: pointer;}
                     }
                 }
 	}
