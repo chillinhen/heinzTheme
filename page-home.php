@@ -56,6 +56,8 @@
 <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('nl-widget'))  ?>
         </div>
     </section>
-
+    <section class="container fans">
+           <?php get_template_part('partials/fanclubs'); ?>
+    </section>
 
     <?php get_footer(); ?>

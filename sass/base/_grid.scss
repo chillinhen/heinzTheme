@@ -85,7 +85,7 @@ aside {
     }
     .footer-widget{
     @media screen and (min-width:$screen-sm){
-    	@include span-columns(6);
+    	@include span-columns(4);
     	}
     }
 }

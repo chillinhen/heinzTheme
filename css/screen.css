@@ -377,6 +377,7 @@ hr {
 /**** caret ****/
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
 /******* SVG *********/
+/*** WP Specials ***/
 /* Mediaqueries breakpoints */
 /* Helper Classes */
 @media screen and (max-width: 480px) {
@@ -493,7 +494,7 @@ body.single-member aside li {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 48.82117%; }
+      width: 31.76157%; }
       .footer .footer-widget:last-child {
         margin-right: 0; } }
 

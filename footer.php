@@ -4,18 +4,7 @@
 			<div class="main">
 			    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('fb-widget'))  ?>
 			</div>
-			<?php
-			$kontaktHeadline = get_field('kontakt_headline', 'option');
-			$kontakt = get_field('kontaktdaten', 'option');
-			if ($kontakt) :
-			    ?>
-			    <div class="side">
-				    <?php if ($kontaktHeadline) : ?>
-				        <h3><?php echo $kontaktHeadline; ?></h3>
-				    <?php endif; ?>
-				    <?php echo $kontakt; ?>
-				</div>
-			<?php endif;?>
+			
 		</section>
 <?php endif;?>
 </div>

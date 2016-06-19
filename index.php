@@ -11,5 +11,8 @@
     <?php get_template_part('pagination'); ?>
 </section>
 <?php get_sidebar(); ?>
+
+
+
 <!-- /section -->
 <?php get_footer(); ?>

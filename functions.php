@@ -20,8 +20,10 @@ function hz_theme_setup() {
     //remove scrap
     remove_filter('show_admin_bar', 'remove_admin_bar');
     remove_action('init', 'create_post_type_html5');
+    
     // Adding Translation Option
     load_theme_textdomain('heinzTheme', get_stylesheet_directory_uri() . '/languages');
+    
     //new Image Formats
     add_image_size('carousel', 980, 570, array('top', 'center'));
     add_image_size('medium', 350, 200, array('top', 'center'));
