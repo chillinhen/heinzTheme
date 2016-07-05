@@ -13,18 +13,21 @@
             );
             $latest_query = new WP_Query($args);
             ?>
+        
+        
         <?php if ($latest_query->have_posts()) : ?>
-        <div class="main latest">
+            <div class="latest">
                 <?php while ($latest_query->have_posts()) : $latest_query->the_post(); ?>
-                <?php get_template_part('partials/article', get_post_format());?>
-                <?php endwhile;?>
-        </div>
+                    <?php get_template_part('partials/article', get_post_format()); ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+                <?php get_template_part('partials/kaufen'); ?>
+            </div>
         <?php else : ?>
-        <div class="main"><?php get_template_part('partials/article', '404'); ?></div>
-        <?php endif;wp_reset_postdata(); ?>
-        <aside class="side">
-        <?php get_template_part('partials/kaufen'); ?>
-        </aside>
+            <div class="main"><?php get_template_part('partials/article', '404'); ?></div>
+            <aside><?php get_sidebar(); ?></aside>
+        <?php endif; ?>
+        
     </section>
     <?php get_template_part('partials/button');?>
     <!-- section -->

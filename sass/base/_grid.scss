@@ -38,20 +38,22 @@ body > main {
     	}
     }
 }
-aside {
+aside, .side {
+	
     @media screen and (min-width:$screen-md){
     	@include span-columns(4);
+    	float: right;
     }
     body.single-member & {
     	li {margin-bottom: 2*$vgrid;
 }
     }
 }
-.latest{
+.latest, .related{
 	@include outer-container;
     > * {
     @media screen and (min-width:$screen-sm){
-    	@include span-columns(6);
+    	@include span-columns(4);
     	}
     }
 }

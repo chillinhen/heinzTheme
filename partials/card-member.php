@@ -16,12 +16,12 @@ if( !empty($image) ):
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <!-- post thumbnail -->
     <?php if (has_post_thumbnail()) : // Check if thumbnail exists ?>
-        <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url('<?php echo $image['url'];?>');?> ;">
+        <a class="thumbnail" href="<?php the_permalink(); ?>#main-menu" title="<?php the_title(); ?>" style="background-image: url('<?php echo $image['url'];?>');?> ;">
             <?php the_post_thumbnail('medium'); // Declare pixel size you need inside the array ?>
         </a>
     <?php endif; ?>
     <!-- /post thumbnail -->
-    <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+    <h3><a href="<?php the_permalink(); ?>#main-menu" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
     <?php html5wp_excerpt('html5wp_index'); ?>
     
 </article>

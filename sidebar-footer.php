@@ -17,13 +17,12 @@
         $kontakt = get_field('kontaktdaten', 'option');
         if ($kontakt) :
             ?>
-            <div class="side">
                 <?php if ($kontaktHeadline) : ?>
                     <h3><?php echo $kontaktHeadline; ?></h3>
                 <?php endif; ?>
                 <?php echo $kontakt; ?>
-            </div>
         <?php endif; ?>
+                     <?php get_template_part('partials/social-media');?>
     </div>
 <?php endif; ?>
 <!-- /sidebar footer -->

@@ -373,6 +373,11 @@ hr {
   padding: 0 !important;
   border: 0 !important; }
 
+.social-media li a span {
+  text-indent: -9999px;
+  display: block;
+  overflow: hidden; }
+
 /*** Mixins & Placeholders ***/
 /**** caret ****/
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
@@ -430,31 +435,32 @@ body.page-template-page-members .main {
     padding-left: 2em; }
 
 @media screen and (min-width: 992px) {
-  aside {
+  aside, .side {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 31.76157%; }
-    aside:last-child {
+    width: 31.76157%;
+    float: right; }
+    aside:last-child, .side:last-child {
       margin-right: 0; } }
-body.single-member aside li {
+body.single-member aside li, body.single-member .side li {
   margin-bottom: 40px; }
 
-.latest {
+.latest, .related {
   max-width: 980px;
   margin-left: auto;
   margin-right: auto; }
-  .latest::after {
+  .latest::after, .related::after {
     clear: both;
     content: "";
     display: table; }
   @media screen and (min-width: 768px) {
-    .latest > * {
+    .latest > *, .related > * {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 48.82117%; }
-      .latest > *:last-child {
+      width: 31.76157%; }
+      .latest > *:last-child, .related > *:last-child {
         margin-right: 0; } }
 
 .blogposts {
@@ -641,6 +647,21 @@ form input[type="submit"] {
     .flexslider .item img {
       margin: 0 auto; } }
 
+.home [class*="video-thumbnail"] {
+  height: 200px;
+  overflow: hidden; }
+
+.fanclubs .flex-control-nav {
+  top: auto;
+  bottom: -40px; }
+
+.flexslider:hover .flex-direction-nav .flex-next {
+  right: -4em; }
+.flexslider:hover .flex-direction-nav .flex-prev {
+  left: -4em; }
+.flex-direction-nav a:before {
+  color: rgba(255, 255, 255, 0.8); }
+
 #main-menu {
   font-family: "Oswald", sans-serif;
   padding-top: 2em;
@@ -675,10 +696,43 @@ form input[type="submit"] {
 .navbar-toggle {
   display: none; }
 
+@media screen and (min-width: 768px) {
+  .navbar-brand {
+    display: none; } }
+
+.sub-menu {
+  display: none; }
+
+.social-media {
+  max-height: 30px; }
+  .social-media li {
+    display: inline-block;
+    padding: 0 .5em; }
+    .social-media li a:before {
+      color: white;
+      display: inline-block;
+      width: 30px;
+      height: 30px; }
+  .social-media li.facebook a:before {
+    font-family: 'FontAwesome';
+    content: "";
+    padding-right: 0;
+    opacity: 1;
+    margin-left: 0;
+    font-size: 2em; }
+  .social-media li.youtube a:before {
+    font-family: 'FontAwesome';
+    content: "";
+    padding-right: 0;
+    opacity: 1;
+    margin-left: 0;
+    font-size: 2em; }
+
 .button-section {
   background: transparent url("../svg/kermit.svg") center bottom no-repeat;
-  background-size: contain;
-  height: 200px; }
+  background-size: contain; }
+  .button-section.blog {
+    height: 200px; }
   .button-section .cta {
     background-color: transparent !important;
     color: #000 !important; }
@@ -777,11 +831,6 @@ form input[type="submit"] {
 .em-search-wrapper {
   display: none; }
 
-.home article.kaufen {
-  background-repeat: no-repeat;
-  background-position: 0% 20%;
-  background-size: contain;
-  padding: 210px 0 0 0; }
 article .thumbnail {
   display: block;
   overflow: hidden;
@@ -986,11 +1035,17 @@ main[role="main"] {
   main[role="main"] > section {
     margin: 0 0 20vH 0; }
 
-@media screen and (min-width: 768px) {
-  .navbar-brand {
-    display: none; } }
-
-.sub-menu {
-  display: none; }
+/*.social-media {
+    li {
+        display: inline-block;
+        a:before{
+            border:1px solid red;
+            color:white;
+            display: block;
+        }
+    }
+  
+}
+*/
 
 /*# sourceMappingURL=screen.css.map */

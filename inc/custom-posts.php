@@ -51,19 +51,19 @@ function my_custom_post_member() {
 
 function my_custom_post_merchandise() {
   $labels = array(
-    'name'               => _x( 'Merchandising', 'post type general name' ),
-    'singular_name'      => _x( 'Merchandising', 'post type singular name' ),
+    'name'               => _x( 'Venn-Artikel', 'post type general name' ),
+    'singular_name'      => _x( 'Venn-Artikel', 'post type singular name' ),
   );
   $args = array(
     'labels'        => $labels,
-    'description'   => 'Infos und Bilder zu Artikeln wie Cds, u.ä.',
+    'description'   => 'Infos und Bilder zu Venn-Artikel wie Cds, Postkarten, T-Shirts und anderen Quatsch',
     'public'        => true,
     'menu_position' => 5,
-    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'post-formats','comments' ),
     'has_archive'   => true,
     "taxonomies" => array('category', 'post_tag')
   );
-  register_post_type( 'merchandise', $args ); 
+  register_post_type( 'venn-artikel', $args ); 
 }
 add_action( 'init', 'my_custom_post_merchandise' );
 

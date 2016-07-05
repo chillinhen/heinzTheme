@@ -14,6 +14,16 @@ jQuery(document).ready(function ($) {
         $(this).attr('href',jumpto);
     });
     
+ //fanclub carousel, made with flexslider
+    $('.fanclubs.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    itemWidth: 315,
+    itemMargin: 15,
+    minItems: 3,
+    maxItems: 6
+  });
+    
     $('.flexslider').flexslider({
         animation: "fade"
     });
@@ -40,7 +50,7 @@ jQuery(document).ready(function ($) {
     });
     
     //elastic iframes
-       $('div:not(".soundcloudIsGold") > iframe').each(function(){
+       $('div:not(".soundcloudIsGold") > iframe,p > iframe').each(function(){
        	$(this).wrap('<div class="iframe-elastic"></div>');
        });
 });

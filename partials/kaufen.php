@@ -1,33 +1,28 @@
 <?php
-$argsMerchandise = array(
-    'post_type' => 'merchandise',
-    'post_status' => 'publish',
-    'posts_per_page' => 1,
-    'orderby' => 'date',
-    'order' => 'DESC');
+$post_object = get_field('kaufen-post');
+$post_link = get_field('kaufen-linkj');
 
-$queryMerchandise = new WP_Query($argsMerchandise);
-?>
-<?php
-if ($queryMerchandise->have_posts()) : while ($queryMerchandise->have_posts()) : $queryMerchandise->the_post();
-        $thumb_id = get_post_thumbnail_id();
-        $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
-        $thumb_url = $thumb_url_array[0];
-        ?>
-        <article style="background-image: url('<?php echo $thumb_url; ?>');" id="post-<?php the_ID(); ?>" <?php post_class('kaufen'); ?>>
-            
-            <h3>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-                <?php the_excerpt(); ?>
-            <footer class="post-infos">
-        <?php edit_post_link(); ?>
-            </footer>
-        </article>
-        <?php get_template_part('partials/button');?>
+if( $post_object ): 
 
+	// override $post
+	$post = $post_object;
+	setup_postdata( $post ); 
 
-    <?php
-    endwhile;
-endif;
-wp_reset_postdata();
-?>
+	?>
+
+<!-- article -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('kaufen'); ?>>
+    <!-- post thumbnail -->
+    <?php if (has_post_thumbnail()) : // Check if thumbnail exists ?>
+        <a class="thumbnail" href="<?php echo $post_link; ?>" title="<?php the_title(); ?>" target="_blank">
+            <?php the_post_thumbnail('medium'); // Declare pixel size you need inside the array ?>
+        </a>
+    <?php endif; ?>
+    <!-- /post thumbnail -->
+    <h3><a href="<?php echo $post_link; ?>" title="<?php the_title(); ?>" target="_blank"><?php the_title(); ?></a></h3>
+    
+    <?php get_template_part('partials/article','small-footer'); ?>
+</article>
+<!-- /article -->
+    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>

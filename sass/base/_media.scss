@@ -26,3 +26,25 @@
         }
     }
 }
+
+.home [class*="video-thumbnail"] {height:200px;overflow: hidden; }
+
+.flex-control-nav{
+    .fanclubs & {
+        top:auto;
+        bottom:-2 * $vgrid;
+    }
+}
+
+.flex-direction-nav{
+    .flexslider:hover & {
+        
+        .flex-next {
+            right:-4em;
+        }
+        .flex-prev {
+            left:-4em;
+        }
+    }
+    a:before{color:rgba(255,255,255,0.8);}
+}

@@ -13,7 +13,7 @@
 	
 	            </div>
 	        <?php endwhile; ?>
-	        <div class="side"><?php get_sidebar('events'); ?></div>
+	       <?php get_sidebar('events'); ?>
 	
 	    <?php else: ?>
 	

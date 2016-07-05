@@ -37,3 +37,32 @@
 .navbar-toggle{
     display: none;
 }
+.navbar-brand{
+    @media screen and (min-width:$screen-sm){display:none;}
+}
+
+.sub-menu{
+	display: none;
+}
+.social-media {
+    max-height:30px;
+    li {
+        display: inline-block;
+        padding:0 .5em;
+        a span {
+            @extend %text-indent;
+        }
+        a:before{
+            color:white;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+    }
+    li.facebook a:before{
+        @include icon-style("\f082", 0, 1, 0, 2em);
+    }
+    li.youtube a:before{
+        @include icon-style("\f16a", 0, 1, 0, 2em);
+    }
+}

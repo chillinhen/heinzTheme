@@ -30,7 +30,7 @@ if( !empty($image) ):
 <?php endif; ?>
     <!-- post title -->
     <h2>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+        <a href="<?php the_permalink(); ?>#main-menu" title="<?php the_title(); ?>"><?php the_title(); ?></a>
     </h2>
     <!-- /post title -->
     <?php the_content();?>

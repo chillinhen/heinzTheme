@@ -1,12 +1,4 @@
-        <?php
-                if (is_front_page()): ?>		
-<section class="widgets">
-			<div class="main">
-			    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('fb-widget'))  ?>
-			</div>
-			
-		</section>
-<?php endif;?>
+
 </div>
 	</main>	
 <!-- footer -->

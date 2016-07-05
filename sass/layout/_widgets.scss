@@ -1,7 +1,9 @@
 .button-section{
 	background: transparent url('../svg/kermit.svg') center bottom no-repeat;
 	background-size: contain;
-	height: 200px;
+        &.blog{
+            height: 200px;  
+        }
 	.cta {
 		background-color:transparent !important;
 		color: #000 !important;
