@@ -26,7 +26,7 @@ textarea {
 }
 
 #{$all-text-inputs},
-select[multiple] {
+select {
   background-color: $base-background-color;
   border: $base-border;
   border-radius: $base-border-radius;
@@ -36,6 +36,7 @@ select[multiple] {
   padding: $base-spacing / 3;
   transition: border-color $base-duration $base-timing;
   width: 100%;
+  font-size:1em;
 
   &:hover {
     border-color: shade($base-border-color, 20%);

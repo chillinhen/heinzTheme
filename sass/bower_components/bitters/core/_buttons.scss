@@ -33,5 +33,12 @@
   }
 }
 .button-section{
-	text-align: center;
+    text-align: center;
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(flex-end);
+    > .cta {
+        min-width:250px;
+        margin:0px auto;
+    }
 }

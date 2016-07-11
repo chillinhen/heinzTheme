@@ -1,4 +1,4 @@
-<!-- article -->
+<?php $format = get_post_format();?><!-- article -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<a class="video-thumbnail" href="<?php the_permalink(); ?>#main-menu" title="<?php the_title(); ?>">
 	<img src="http://img.youtube.com/vi/<?php echo get_field('video_id');?>/0.jpg" alt="<?php the_title(); ?>" width="314" height="200">

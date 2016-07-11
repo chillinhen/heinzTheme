@@ -32,6 +32,7 @@ function hz_theme_setup() {
 //    add_image_size('portrait', 560, 680, true);
 //    add_image_size('sidebar',365,365,true);
     add_image_size('blog-detail', 750, 465, array('top', 'center'));
+    add_image_size('blog-featured', 630, 200, array('top', 'center'));
 //    
     //modernizr
     add_action('wp_enqueue_scripts', 'register_modernizr');
@@ -95,6 +96,16 @@ function hz_theme_setup() {
 
 
     if (function_exists('register_sidebar')) {
+        // place search
+        register_sidebar(array(
+            'name' => __('Suche', 'heinzTheme'),
+            'description' => __('hier liegt das Suchformular...', 'heinzTheme'),
+            'id' => 'search',
+            'before_widget' => '<div id="search" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h5>',
+            'after_title' => '</h5>'
+        ));
         // Define Marquee
         register_sidebar(array(
             'name' => __('Laufschrift', 'heinzTheme'),

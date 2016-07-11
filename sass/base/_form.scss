@@ -8,18 +8,43 @@ form{
         font-size: 1em;
     }
     .newsletter-widget & {
-        
+
         @include outer-container;
         p {
             input {
                 width:100%;
                 padding:.5em 1em;
                 &.newsletter-submit{text-align: left;}
-                    &[type="checkbox"]{
-                        float:left;
-                        width:auto;
-    }
+                &[type="checkbox"]{
+                    float:left;
+                    width:auto;
+                }
             }
         }
     }
+    &.search{
+        @include align-items(stretch);
+        @include display(flex);
+        @include justify-content(space-between);
+        > .search-input{
+            @include flex(2);
+            margin:0;
+        }
+        > .search-submit{
+            &:before{
+                @include icon-style ("\f002", 0, 1,0, 1em);
+                padding-top: 1em;
+                display: inline-block;
+            }
+            padding:0 1em;
+            span{
+                width:0;
+                @extend %text-indent;
+            }
+        }
+    }
+}
+select{
+    @include appearance(button);
+    width:100%;
 }

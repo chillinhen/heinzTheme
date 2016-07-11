@@ -23,6 +23,7 @@ body > main {
 .main {
 	@media screen and (min-width:$screen-md){
 		@include span-columns(8);
+                & + .side{@include span-columns(4);}
 	}
     
     body.page-template-page-members &{
@@ -38,15 +39,18 @@ body > main {
     	}
     }
 }
-aside, .side {
-	
-    @media screen and (min-width:$screen-md){
-    	@include span-columns(4);
-    	float: right;
+
+aside {
+        @include outer-container;
+    .sidebar-widget:first-child{
+        @include span-columns(8);
+    }
+        .sidebar-widget:last-child{
+        @include span-columns(4);
     }
     body.single-member & {
-    	li {margin-bottom: 2*$vgrid;
-}
+        li {margin-bottom: 2*$vgrid;
+        }
     }
 }
 .latest, .related{

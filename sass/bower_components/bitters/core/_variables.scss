@@ -21,6 +21,7 @@ $base-z-index: 0;
 
 // Colors
 $primary-color:#4F5B73;
+$lighterGrey:lighten($primary-color,30%);
 $call-to-action: #8A99A6;
 $dark-gray: #333;
 $medium-gray: #999;

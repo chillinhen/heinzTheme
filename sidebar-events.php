@@ -5,7 +5,7 @@
 		$categories = get_categories( $args );
 		if ($categories) : ?>
 			<div class="subcategories">
-			<h3><?php _e('Programs', 'heinzTheme'); ?></h3>
+			<h3><?php _e('Programmarchiv', 'heinzTheme'); ?></h3>
 			<?php foreach($categories as $category) :
 			    echo '<a class="catlink" href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
 			    echo '<p>'. $category->description . '</p>';

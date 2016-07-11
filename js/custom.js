@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+    //tweak search menu
+    $('.search-submit').wrapInner('<span></span>');
     //close marquee
     $('#marquee .close').click(function(){
         $('#marquee').removeClass('slideIn').addClass('fadeOut');

@@ -1,13 +1,9 @@
 .button-section{
-	background: transparent url('../svg/kermit.svg') center bottom no-repeat;
+	background: transparent url('../img/kroete.jpg') center top no-repeat;
 	background-size: contain;
         &.blog{
             height: 200px;  
         }
-	.cta {
-		background-color:transparent !important;
-		color: #000 !important;
-	}
 }
 .widget_em_widget{
     li {
@@ -18,12 +14,7 @@
 
     }
 }
-.blog + aside {
-    @include outer-container;
-    .sidebar-widget{
-        @include span-columns(6);
-    }
-}
+
 .sidebar-widget {
     > [class*="widget_"]{
         margin-bottom: 3em;
