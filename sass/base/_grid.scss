@@ -38,6 +38,10 @@ body > main {
     		padding-left: 2em;
     	}
     }
+    body.single-format-gallery & {
+       @include span-columns(12);
+         & + aside{display:none;}
+    }
 }
 
 aside {

@@ -108,4 +108,28 @@ main[role="main"] {
 
     }
 }
+.blogposts{
+    body.category & {
+        border:{
+            width:1px 0 0 0;
+            style:solid;
+            color:$lighterGrey;
+        }
+        padding-top: 2em;
+        margin-top: 1em;
+    }
+    
+}
+.gallery{
+    @include outer-container(100%);
+    br{
+        display: none;
+    }
+}
+.gallery-item{
+    .gallery-columns-3 &{
+        @include span-columns(4);
+        @include omega(3n);
+    }
+}
 

@@ -69,4 +69,7 @@
 			border: 0;
 		}
 	}
+        .description{
+/*            @include ellipsis(125%);*/
+        }
 }
