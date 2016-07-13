@@ -334,13 +334,18 @@ body {
   font-size: 1.5em;
   line-height: 1.5; }
 
+h1, h2 {
+  font-family: "Oswald", sans-serif; }
+
+h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif; }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswald", sans-serif;
   line-height: 1.2;
   margin: 0 0 0.75em; }
   h1 a,
@@ -523,6 +528,7 @@ aside {
         margin-right: 0; } }
 
 .blogposts {
+  /*        @include column-rule(1px solid $lighterGrey);*/
   -webkit-column-gap: 2em;
   -moz-column-gap: 2em;
   column-gap: 2em; }
@@ -535,12 +541,14 @@ aside {
     .blogposts {
       -webkit-columns: 3 6em;
       -moz-columns: 3 6em;
-      columns: 3 6em; } }
+      columns: 3 6em;
+      /*@include column-count(3);*/ } }
   .blogposts > article {
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid;
-    margin-bottom: 4em; }
+    margin: 0;
+    padding-bottom: 4em; }
 
 .footer {
   margin-top: 40px; }
@@ -581,19 +589,18 @@ body {
   font-size: 1.5em;
   line-height: 1.5; }
 
-/*h1,h2{
-	  font-family: $heading-font-family;
-}
-h3,h4, h5, h6{
-	  font-family: $base-font-family;
-}*/
+h1, h2 {
+  font-family: "Oswald", sans-serif; }
+
+h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif; }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswald", sans-serif;
   line-height: 1.2;
   margin: 0 0 0.75em; }
   h1 a,
@@ -616,8 +623,14 @@ h6 {
   h4, article
   h5, article
   h6 {
-    padding-bottom: .5em;
-    min-height: 3em; }
+    padding-bottom: .5em; }
+    .home article h1, .home article
+    h2, .home article
+    h3, .home article
+    h4, .home article
+    h5, .home article
+    h6 {
+      min-height: 3em; }
   .type-member h1, .type-member
   h2, .type-member
   h3, .type-member
@@ -1021,7 +1034,8 @@ article .meta span {
 a.video-thumbnail {
   position: relative;
   display: block;
-  margin-bottom: 1em; }
+  max-width: 314px;
+  margin: 0 auto 1em auto; }
   a.video-thumbnail:after {
     font-family: 'FontAwesome';
     content: "";

@@ -1,20 +1,27 @@
 <?php get_header(); ?>
 <!-- section -->
 <section class="row">
+    <?php if (have_posts()):?>
 	<h1><?php
 	    _e('', 'heinzTheme');
 	    single_cat_title();
 	    ?>
 	    </h1>
     <div class="blogposts">
-        <?php
-        if (have_posts()): while (have_posts()) : the_post();
+        <?php while (have_posts()) : the_post();
                 get_template_part('partials/article', get_post_format());
-            endwhile;
-        endif;
-        ?>
+            endwhile;?>
+        
+    </div>
+     <?php get_template_part('pagination');?>
+    <?php else :?>
+    <div class="main">
+            <?php get_template_part('partials/article', '404'); ?>
     </div>
     <!-- /section -->
-   <?php get_template_part('pagination');?>
+  
+    <?php endif;?>
+        
+</section>
 
     <?php get_footer(); ?>

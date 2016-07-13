@@ -13,7 +13,7 @@ $fans_query = new WP_Query($args);
         <h2 style="text-align: center;"><?php _e('Venn-Clubs und Venn-Artikel')?></h2>
         <ul class="slides">
         <?php while ($fans_query->have_posts()) : $fans_query->the_post(); ?>
-            <li><?php get_template_part('partials/article', get_post_format()); ?></li>
+            <li><?php get_template_part('partials/card'); ?></li>
         <?php endwhile;
         wp_reset_postdata(); ?>
         </ul>

@@ -18,7 +18,7 @@
         <?php if ($latest_query->have_posts()) : ?>
             <div class="latest">
                 <?php while ($latest_query->have_posts()) : $latest_query->the_post(); ?>
-                    <?php get_template_part('partials/article',get_post_format()); ?>
+                    <?php get_template_part('partials/cards'); ?>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
                 <?php get_template_part('partials/kaufen'); ?>

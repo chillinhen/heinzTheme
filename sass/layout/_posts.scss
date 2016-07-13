@@ -94,8 +94,9 @@ article{
 a.video-thumbnail{
 	position: relative;
 	display: block;
-	margin-bottom: 1em;
-
+	max-width:314px;
+	margin:0 auto 1em auto;
+//	border:1px solid red;
 	&:after{
 		@include icon-style ("\f04b", 0, 1, 0, 3em);
 		@include alpha-background-color(rgba(black, 0.35), white);

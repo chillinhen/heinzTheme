@@ -6,9 +6,10 @@
             <?php get_template_part('partials/article', 'full'); ?>
             <?php endwhile; ?>
         </div>
-        <?php get_sidebar(); ?>
+       
     </section>
         <?php get_template_part('partials/article', 'related'); ?>
+        <?php get_sidebar('bottom'); ?>
 <?php else: ?>
     <section class="container">
         <!-- 404 -->

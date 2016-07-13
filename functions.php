@@ -28,7 +28,8 @@ function hz_theme_setup() {
 
     //new Image Formats
     add_image_size('carousel', 980, 570, array('top', 'center'));
-    add_image_size('medium', 314, 200, array('top', 'center'));
+    add_image_size('medium', 314, 200, true);
+    add_image_size( 'blog-thumbnail', 314, 9999 );
 //    add_image_size('portrait', 560, 680, true);
 //    add_image_size('sidebar',365,365,true);
     add_image_size('blog-detail', 750, 465, array('top', 'center'));
@@ -80,9 +81,8 @@ function hz_theme_setup() {
         wp_register_style('nivo-theme', get_stylesheet_directory_uri() . '/lightbox/themes/default/default.css', 'style', '1.0', 'all', array());
         wp_enqueue_style('nivo-theme');
 
-        wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento+Sans:400,700,700italic,400italic', array(), 'all');
+        wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento+Sans:400,700,700italic,400italic|Roboto+Condensed:400,300,300italic,700,400italic,700italic', array(), 'all');
         wp_enqueue_style('googlefont'); // Enqueue it!
-
 
 
         wp_register_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', array(), '4.4.0', 'all');

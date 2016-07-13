@@ -1,6 +1,7 @@
 <?php
+
 $post_object = get_field('kaufen-post');
-$post_link = get_field('kaufen-linkj');
+$post_link = get_field('kaufen-link');
 
 if( $post_object ): 
 
@@ -9,7 +10,6 @@ if( $post_object ):
 	setup_postdata( $post ); 
 
 	?>
-
 <!-- article -->
 <article id="post-<?php the_ID(); ?>" <?php post_class('kaufen'); ?>>
     <!-- post thumbnail -->
@@ -23,6 +23,5 @@ if( $post_object ):
     
     <?php get_template_part('partials/article','small-footer'); ?>
 </article>
-<!-- /article -->
     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 <?php endif; ?>
