@@ -18,13 +18,7 @@
 	<div class="sidebar-widget">
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-events')) ?>
 	</div>
-	<div class="sidebar-widget">
-		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('sc-widgets'))  ?>
-		
-	</div>
-	<div class="sidebar-widget">
-		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('nl-widget'))  ?>
-	</div>
+
 	
 
 </aside>

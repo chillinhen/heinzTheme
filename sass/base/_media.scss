@@ -16,6 +16,12 @@
     }
 }
 .flexslider{
+    @media screen and (max-width:$screen-xs){
+        margin:0;
+        .home & {
+        margin-top:44px;
+        }
+    }
     .item{
         @media screen and (min-width:$screen-sm) and (orientation:landscape){
             height:calc(100vH);

@@ -14,7 +14,7 @@
         ?>
         
         <span class="author"><?php _e('<span>Published by</span>', 'heinzTheme'); ?> <?php the_author_posts_link(); ?></span>
-        <span class="meta-comments"><?php if (comments_open(get_the_ID())) comments_popup_link(__('Leave your thoughts', 'heinzTheme'), __('1 Comment', 'heinzTheme'), __('% Comments', 'heinzTheme')); ?></span>
+        <span class="meta-comments"><?php if (comments_open(get_the_ID())) comments_popup_link(__('Gib deinen Senf ab', 'heinzTheme'), __('1 Comment', 'heinzTheme'), __('% Comments', 'heinzTheme')); ?></span>
         <span class="edit"><?php edit_post_link(); ?></span>   
         <!-- /post details -->
     </div>

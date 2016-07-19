@@ -1,0 +1,24 @@
+.comments{
+    margin-top: 2 * $vgrid;
+    @media screen and (min-width:$screen-sm){
+        max-width:500px;
+    }
+    
+    
+    .comment-body{
+        margin-bottom: $vgrid;
+        border:{
+            width:0 0 1px 0;
+            style:dotted;
+            color:lighten($primary-color,50%);
+        }
+    }
+    .comment-author{
+        img{display: block;}
+    }
+    .commentmetadata *{font-size: small;}
+    .comment-reply-link{
+        color:darken($primary-color,50%);
+       &:before{ @include icon-style("\f112", .5em, 1, 0, small);}
+    }
+}

@@ -8,9 +8,6 @@
                 <!-- article -->
                 <?php get_template_part('partials/article', 'full'); ?>
                 <!-- /article -->
-
-
-
             </div>
         <?php endwhile;?>
         

@@ -15,7 +15,7 @@ $relatedQuery = new WP_Query(array(
     <section class="container related">
     <?php
     while ($relatedQuery->have_posts()) : $relatedQuery->the_post();
-        get_template_part('partials/card');
+        get_template_part('partials/card',get_post_format());
     endwhile;
     wp_reset_postdata();
     ?>

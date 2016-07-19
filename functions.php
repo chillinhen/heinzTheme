@@ -1,8 +1,8 @@
 <?php
 
 // init custom posts
-require_once 'inc/custom-posts.php';
-require_once('inc/customizer.php');
+//require_once 'inc/custom-posts.php';
+//require_once('inc/customizer.php');
 // add ACF Theme Options
 if (function_exists('acf_add_options_page')) {
 
@@ -85,7 +85,7 @@ function hz_theme_setup() {
         wp_enqueue_style('googlefont'); // Enqueue it!
 
 
-        wp_register_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', array(), '4.4.0', 'all');
+        wp_register_style('fontawseome', '/css/font-awesome.min.css', 'style', array(), '4.6.3', 'all');
         wp_enqueue_style('fontawseome'); // Enqueue it!
 
         wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style', 'flexslider', 'googlefont', 'fontawseome'), '1.0', 'all');

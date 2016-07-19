@@ -21,10 +21,17 @@ h6 {
   a{color: inherit;}
   .logo & {
       text-align: center;
+      @media screen and (max-width:$screen-xs){
+          margin:0;
+      }
   }
   article & {
   padding-bottom: .5em;
-  .home & {min-height: 3em;}
+  .home & {
+      @media screen and (min-width:$screen-sm) and (orientation:landscape){
+      min-height: 3em;
+      }
+  }
   
   }
   .type-member & {

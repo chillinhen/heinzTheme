@@ -15,16 +15,17 @@ jQuery(document).ready(function ($) {
         //alert(jumpto);
         $(this).attr('href',jumpto);
     });
-    
- //fanclub carousel, made with flexslider
+    //gallery
+    $('.gallery').children('br').remove();
+    //fanclub carousel, made with flexslider
     $('.fanclubs.flexslider').flexslider({
-    animation: "slide",
-    animationLoop: false,
-    itemWidth: 315,
-    itemMargin: 15,
-    minItems: 3,
-    maxItems: 6
-  });
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 315,
+        itemMargin: 15,
+        minItems: 3,
+        maxItems: 6
+    });
     
     $('.flexslider').flexslider({
         animation: "fade"

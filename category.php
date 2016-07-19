@@ -4,7 +4,7 @@
     <?php if (have_posts()): ?>
         
             <h1>
-                <?php single_cat_title(); _e(' - Alle Beiträge aus dem Programm: ', 'heinzTheme');?>
+                <?php single_cat_title(); _e('', 'heinzTheme');?>
             </h1>
             <p>
                 <em>

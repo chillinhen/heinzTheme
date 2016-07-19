@@ -1,6 +1,6 @@
 
-</div>
 	</main>	
+  <?php get_sidebar('bottom'); ?>
 <!-- footer -->
 <footer class="footer" role="contentinfo">
 	<div class="container">

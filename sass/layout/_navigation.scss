@@ -1,6 +1,12 @@
 #main-menu{
     font-family: $heading-font-family;
-    @include padding(2em null 3em null);
+    @media screen and (max-width:$screen-xs) {
+        margin:1em 0 0 0;
+    }
+    @media screen and (min-width:$screen-sm){
+        @include padding(2em null 3em null);
+    }
+    
     text-transform:uppercase;
     font-weight: bolder;
     font-size: rem(36);
@@ -10,7 +16,12 @@
         @extend %reset;
         li {
             display:inline-block;
-            margin:0 1em 0 0;
+            
+            @media screen and (max-width:$screen-xs){
+                margin:0 .5em;
+                min-height:40px;
+            }
+            @media screen and (min-width:$screen-sm){margin:0 1em 0 0;}
             a {
                 color:black;
                 &:hover{
@@ -33,12 +44,71 @@
             &.sounds-videos a:hover{background-size: cover;}
         }
     }
+
+}
+
+#main-nav{
+
+	@media screen and (max-width:$screen-xs){
+		#main-menu{
+			height:0;
+			overflow:hidden;
+		}
+		&:target #main-menu{
+			height:120px;
+		}	
+	}
+}
+
+.navbar-header{
+    @media screen and (max-width:$screen-xs) {
+        position:fixed;
+        background:white;
+        top:0;
+        left:0;
+        right:0;
+        z-index:999999;
+        @include align-items(stretch);
+        @include display(flex);
+        @include flex-direction(row);
+        @include justify-content(flex-start);
+    > .navbar-brand{
+        @include flex(2);
+    	}
+    }
+    
 }
 .navbar-toggle{
-    display: none;
+    padding:.5em;
+    @include size(44px);
+    display:inline-block;
+    &, &:focus{
+        background: transparent;
+    }
+    
+    
+   .sr-only{
+       display: none;
+   }
+   .icon-bar{
+       background: $primary_color;
+       display: block;
+       height:3px;
+       margin-bottom: .5em;
+   }
+
 }
+
+
 .navbar-brand{
-    @media screen and (min-width:$screen-sm){display:none;}
+        @media screen and (max-width:$screen-xs) {
+        background:transparent url('../img/logo.svg') no-repeat center center;
+        background-size:auto 50%;
+        padding:.2em 1em;
+        text-indent:-999999px;
+        display:inline-block;
+        overflow:hidden;
+    }
 }
 
 .sub-menu{

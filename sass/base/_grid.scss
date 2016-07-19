@@ -57,6 +57,10 @@ aside {
         }
     }
 }
+.bottom{
+    background: lighten($primary-color,60%);
+    padding-top:2*$vgrid;
+}
 .latest, .related{
 	@include outer-container;
     > * {
@@ -73,8 +77,6 @@ aside {
 	
 	@media screen and (min-width:$screen-md){
 		@include columns(3 6em);
-                
-/*@include column-count(3);*/
 	}
     
     @include column-gap(2em);
@@ -85,7 +87,6 @@ aside {
     }
 }
 .footer{
-    margin-top: 2 * $vgrid;
     @media screen and (max-width:$screen-xs){
     	padding: 1em;
     }

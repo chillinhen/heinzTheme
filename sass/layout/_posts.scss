@@ -1,5 +1,13 @@
-article{   
-    
+article{
+    @media screen and (max-width:$screen-xs){
+        margin:1em 0;
+    }
+    .single &.has-post-thumbnail{
+        > a {
+            margin-bottom: $vgrid;
+            display: block;
+        }
+    }
     .thumbnail{
         display: block; 
         overflow: hidden;
@@ -8,6 +16,7 @@ article{
         @media screen and (max-width:$screen-mini - 1){
         	height:200px;
          }
+        .latest &, .fanclubs &, .related & {height:200px;}
     }
     &.type-member{
         .thumbnail{
@@ -96,10 +105,9 @@ a.video-thumbnail{
 	display: block;
 	max-width:314px;
 	margin:0 auto 1em auto;
-//	border:1px solid red;
 	&:after{
 		@include icon-style ("\f04b", 0, 1, 0, 3em);
-		@include alpha-background-color(rgba(black, 0.35), white);
+		@include alpha-background-color(rgba(black, 0.15), white);
 		color: white;
 		width: inherit;
 		height: inherit;

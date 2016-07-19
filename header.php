@@ -36,12 +36,12 @@
         <!-- header -->
         <header role="banner">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                <a type="button" class="navbar-toggle" href="#main-nav">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
+                </a>
                 <a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
             </div>
             <?php
@@ -70,7 +70,7 @@
             </hgroup>
             <!-- / logo -->
             <!-- nav -->
-            <nav role="navigation">
+            <nav role="navigation" id="main-nav">
                 <div class="container collapse navbar-collapse" id="main-menu">
                     <?php html5blank_nav(); ?>
                 </div>

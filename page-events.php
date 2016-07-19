@@ -26,13 +26,11 @@
 	<?php endif; ?>
 	
 	</section>
-    <!-- section news -->
-    
     <section class="container widgets">
         <div class="main">
 <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('sc-widgets'))  ?>
         </div>
-        <div class="side">
+        <div class="side" role="complementary">
 <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('nl-widget'))  ?>
         </div>
     </section>
