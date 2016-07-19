@@ -3,3 +3,18 @@
         display:none;
     }
 }
+@mixin svg-icons($url,$size,$pd-r,$mg-l,$op){
+    background:{
+        image:url($url);
+        repeat:no-repeat;
+        position:left center;
+        size:contain;
+        color:transparent;
+    }
+    content: '';
+    display:inline-block;
+    @include size($size);
+    padding-right:$pd-r;
+    margin-left:$mg-l;
+    opacity:$op;
+}

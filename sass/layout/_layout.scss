@@ -81,26 +81,40 @@ header[role="banner"]{
 .logo{
     background: #fff;
     @include shadow;
-    body.home & {
-    	@include transform(scale(0.75) rotate(-3deg));
-        @media screen and(max-width:$screen-xs) and (orientation:portrait) {
-            display:none;
-        }
-        @media screen and (min-width:$screen-md){
-            bottom: 2em;
-            padding: 2em;
-        }
+    @media screen and(max-width:$screen-sm - 1) {
+        display:none;
     }
     h2{
-       @extend %no-phone;
+        @extend %no-phone;
+    }
+    @media screen and (min-width:$screen-sm){
+        padding:1.5em 2em;
+    }
+    @media screen and (min-width:$screen-sm) and (max-width:772px){
+        top: 55%;
+    }
+    @media screen and (min-width:773px) and (max-width:798px) {
+        top: 30%;
+    }
+    @media screen and (min-width:799px) and (max-width:$screen-md - 1){
+        bottom: 6em;
+        top:auto;
+    }
+     @media screen and (min-width:$screen-md){
+        bottom: 2em;
+        top:auto;
+    }
+    body.home & {
+        @include transform(scale(0.75) rotate(-3deg));
     }
     body:not(.home) & {
-    	@include transform(scale(0.5) rotate(-3deg));
-    	bottom: 0;
-    	}
+        @include transform(scale(0.5) rotate(-3deg));
+        @media screen and (min-width:$screen-md){
+            bottom: 0;
+        }
+    }
     @include transform-origin(top center);
     position: absolute;
-
     width: 70%;
     left:15%;
     z-index: 99;

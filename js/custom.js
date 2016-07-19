@@ -1,36 +1,41 @@
 jQuery(document).ready(function ($) {
+//responsive
+    function checkSize() {
+        if ($(".navbar-header").css("display") == "none") {
+            //fanclub carousel, made with flexslider
+            $('.fanclubs').addClass('flexslider');
+            $('.fanclubs.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: false,
+                itemWidth: 315,
+                itemMargin: 15,
+                minItems: 3,
+                maxItems: 6
+            });
+            // jumpto main menu
+            var anker = 'main-menu';
+            var currentlink = $('li:not(.kaufen).menu-item > a');
+            currentlink.click(function () {
+                var link = $(this).attr('href');
+                var jumpto = link + '#' + anker;
+                //alert(jumpto);
+                $(this).attr('href', jumpto);
+            });
+        }
+    }
+    checkSize();
     //tweak search menu
     $('.search-submit').wrapInner('<span></span>');
     //close marquee
-    $('#marquee .close').click(function(){
+    $('#marquee .close').click(function () {
         $('#marquee').removeClass('slideIn').addClass('fadeOut');
     });
-    // jumpto main menu
-    var anker = 'main-menu';
-    var currentlink = $('li:not(.kaufen).menu-item > a');
-    
-    currentlink.click(function(){
-        var link = $(this).attr('href');
-        var jumpto = link + '#' + anker;
-        //alert(jumpto);
-        $(this).attr('href',jumpto);
-    });
+
     //gallery
     $('.gallery').children('br').remove();
-    //fanclub carousel, made with flexslider
-    $('.fanclubs.flexslider').flexslider({
-        animation: "slide",
-        animationLoop: false,
-        itemWidth: 315,
-        itemMargin: 15,
-        minItems: 3,
-        maxItems: 6
-    });
-    
     $('.flexslider').flexslider({
         animation: "fade"
     });
-
     $('.gallery-item a').nivoLightbox({
         effect: 'fade', // The effect to use when showing the lightbox 
         theme: 'default', // The lightbox theme to use 
@@ -44,18 +49,20 @@ jQuery(document).ready(function ($) {
         onNext: function (element) {}, // Callback when the lightbox gallery goes to next item 
         errorMessage: 'The requested content cannot be loaded. Please try again later.' // Error message when content can't be loaded 
     });
-
     $('.thumbnail a').each(function () {
         var gallery = $(this).parent().parent().parent('div');
         var galleryID = gallery.attr('id');
         //alert(galleryID);
         $(this).attr('data-lightbox-gallery', galleryID);
     });
-    
     //elastic iframes
-       $('div:not(".soundcloudIsGold") > iframe,p > iframe').each(function(){
-       	$(this).wrap('<div class="iframe-elastic"></div>');
-       });
+    $('div:not(".soundcloudIsGold") > iframe,p > iframe').each(function () {
+        $(this).wrap('<div class="iframe-elastic"></div>');
+    });
+    //external icons
+    $('a').filter(function () {
+        return this.hostname && this.hostname !== location.hostname;
+    }).append(' <span class="external-link"></span>').attr('target', '_blank');
 });
 jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() > 100) {

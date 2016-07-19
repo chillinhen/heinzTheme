@@ -32,7 +32,7 @@ form{
         }
         > .search-submit{
             &:before{
-                @include icon-style ("\f002", 0, 1,0, 1em);
+                @include svg-icons('../img/icons/search.svg',1em,1em,0,1);
                 padding-top: 1em;
                 display: inline-block;
             }

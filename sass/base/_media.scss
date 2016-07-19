@@ -1,4 +1,7 @@
 .header-image{
+    @media screen and (max-width:$screen-smallPad) {
+        margin-top:44px;
+    }
 	@media screen and (max-width:$screen-sm - 1) and (orientation:landscape){
 		height:50vH;
 	}

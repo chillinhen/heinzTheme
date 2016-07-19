@@ -5,20 +5,24 @@ $grid-columns: 12;
 $max-width: 980px;
 
 body > main {
-	@media screen and (max-width:$screen-xs){
-		margin: 0 1em;
-	}
-	@media screen and (min-width:$screen-xs) and (max-width:$screen-sm){
-		margin: 0 2em;
-	}
+    @media screen and (max-width:$screen-sm - 1) {
+        margin-top: 2 * $vgrid;
+    }
 }
 .container {
     @include outer-container;
     @extend %clearfix;
+            @media screen and (max-width:$screen-sm){
+            margin: 0 1em;
+        }
+        @media screen and (min-width:$screen-sm) and (max-width:$screen-md){
+            margin: 0 2em;
+        }
     > section {
         margin-bottom: 2 * $vgrid;
     }
 }
+    
 
 .main {
 	@media screen and (min-width:$screen-md){

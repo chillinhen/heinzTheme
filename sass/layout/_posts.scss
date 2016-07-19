@@ -86,17 +86,31 @@ article{
         span {
             display:inline-block;
             margin:0 .5em 0 0;
-            &:before {@include icon-style("\f0da",.3em,1,0,small);}
-            &.date:before {content: "\f133"};
-            &.category:before{content: "\f187"};
-            &.tags:before{content: "\f02b"};
-            &.author:before{content: "\f007";};
-            &.meta-comments:before{content: "\f075"};
-            &.edit:before{content:"\f040";}
+            &.date:before {
+                @include svg-icons('../img/icons/calendar.svg',1em,1.5em,0,1);
+            }
+            &.category:before{
+                @include svg-icons('../img/icons/archive.svg',1em,1.5em,0,1);
+            }
+            &.tags:before{
+                @include svg-icons('../img/icons/tag.svg',1em,1.5em,0,1);
+            }
+            &.author:before{
+                @include svg-icons('../img/icons/author.svg',1em,1.5em,0,1);
+            }
+            &.meta-comments:before{
+                @include svg-icons('../img/icons/comment.svg',1em,1.5em,0,1);
+            }
+            &.edit:before{
+                @include svg-icons('../img/icons/edit.svg',1em,1.5em,0,1);
+            }
             > span {display:none;}
 
         }
 
+    }
+    span.external-link{
+        @include svg-icons('../img/icons/external.svg',1em,0,.25em,1);
     }
 }
 
@@ -106,8 +120,14 @@ a.video-thumbnail{
 	max-width:314px;
 	margin:0 auto 1em auto;
 	&:after{
-		@include icon-style ("\f04b", 0, 1, 0, 3em);
-		@include alpha-background-color(rgba(black, 0.15), white);
+                content:' ';
+                @include alpha-background-color(rgba(black, 0.15), white);
+                background:{
+                    image:url(../img/icons/play.svg);
+                    repeat:no-repeat;
+                    position:center center;
+                    size:3em auto;
+                }
 		color: white;
 		width: inherit;
 		height: inherit;

@@ -11,13 +11,17 @@ $relatedQuery = new WP_Query(array(
         ));
 ?>
 <?php if ($relatedQuery->have_posts()) : ?>
-<h2><?php _e('Ähnlicher Kram','heinzTheme');?></h2>
+    <h2><?php _e('Ähnlicher Kram', 'heinzTheme'); ?></h2>
     <section class="container related">
-    <?php
-    while ($relatedQuery->have_posts()) : $relatedQuery->the_post();
-        get_template_part('partials/card',get_post_format());
-    endwhile;
-    wp_reset_postdata();
-    ?>
+        <?php
+        while ($relatedQuery->have_posts()) : $relatedQuery->the_post();
+            if (has_post_format('video')) :
+                get_template_part('partials/article', 'video');
+            else :
+                get_template_part('partials/article',get_post_format());
+            endif;
+        endwhile;
+        wp_reset_postdata();
+        ?>
     </section>
 <?php endif; ?>

@@ -19,6 +19,9 @@
     .commentmetadata *{font-size: small;}
     .comment-reply-link{
         color:darken($primary-color,50%);
-       &:before{ @include icon-style("\f112", .5em, 1, 0, small);}
+       &:before{ 
+           @include svg-icons('../img/icons/reply.svg',1em,1em,0,1);
+       }
     }
 }
+/***/
