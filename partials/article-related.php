@@ -6,13 +6,14 @@ $relatedQuery = new WP_Query(array(
     'post_type' => 'post',
     'posts_per_page' => 3,
     'post__in' => $ids,
-    'post_status' => 'any',
+    'post_status' => 'publish',
     'orderby' => 'post__in',
         ));
 ?>
 <?php if ($relatedQuery->have_posts()) : ?>
-    <h2><?php _e('Ähnlicher Kram', 'heinzTheme'); ?></h2>
+    
     <section class="container related">
+        <h2><?php _e('Ähnlicher Kram', 'heinzTheme'); ?></h2>
         <?php
         while ($relatedQuery->have_posts()) : $relatedQuery->the_post();
             if (has_post_format('video')) :

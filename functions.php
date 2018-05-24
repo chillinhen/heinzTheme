@@ -49,6 +49,7 @@ function hz_theme_setup() {
         if (!is_admin()) {
 
             function hz_scripts() {
+            	        #wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/cbdb11d0da.js', array(), false, false);
                 wp_register_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '1.2', true);
                 wp_enqueue_script('modernizr');
                 // flexslider
@@ -81,15 +82,18 @@ function hz_theme_setup() {
         wp_register_style('nivo-theme', get_stylesheet_directory_uri() . '/lightbox/themes/default/default.css', 'style', '1.0', 'all', array());
         wp_enqueue_style('nivo-theme');
 
-        wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento+Sans:400,700,700italic,400italic|Roboto+Condensed:400,300,300italic,700,400italic,700italic', array(), 'all');
+        wp_register_style('googlefont', get_stylesheet_directory_uri() . '/css/fonts.css', array(), 'all');
         wp_enqueue_style('googlefont'); // Enqueue it!
 
 
-        wp_register_style('fontawseome', '/css/font-awesome.min.css', 'style', array(), '4.6.3', 'all');
+        wp_register_style('fontawseome', get_stylesheet_directory_uri() . '/css/font-awesome.css', 'style', array(), '4.6.3', 'all');
         wp_enqueue_style('fontawseome'); // Enqueue it!
 
         wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style', 'flexslider', 'googlefont', 'fontawseome'), '1.0', 'all');
         wp_enqueue_style('child-style'); // Enqueue it!
+        
+        wp_register_style('print', get_stylesheet_directory_uri() . '/css/print.css', 'style', '1.0', 'print', array('child-style'));
+        wp_enqueue_style('print');
     }
 
     add_action('wp_enqueue_scripts', 'hz_styles');
@@ -116,8 +120,18 @@ function hz_theme_setup() {
         ));
         // Define Sidebar Home
         register_sidebar(array(
-            'name' => __('Sidebar Home', 'heinzTheme'),
+            'name' => __('Sidebar Heim', 'heinzTheme'),
             'description' => __('Hier die Widgets, die nur auf der Startseite angezeigt werden sollen', 'heinzTheme'),
+            'id' => 'sidebar-heim',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        // Define Sidebar Presse
+        register_sidebar(array(
+            'name' => __('Sidebar Presse', 'heinzTheme'),
+            'description' => __('Hier ein paar ausgewählte Widgets für das Presssekit', 'heinzTheme'),
             'id' => 'sidebar-home',
             'before_widget' => '<div id="%1$s" class="%2$s">',
             'after_widget' => '</div>',
@@ -185,6 +199,24 @@ function hz_theme_setup() {
             'after_title' => '</h3>'
         ));
     }
+    //Theme Support fpr title
+    add_theme_support('title-tag');
+    function filter_the_document_title(){
+    $title=$custom_generated_title;
+              return $title;
+    }
+    add_filter( 'pre_get_document_title', 'filter_the_document_title',10);
+    function sak_document_title_separator($sep){
+        // change separator for singular blog post
+        if( is_singular( array( 'post', 'page' )  ) ){ 
+            $sep = '|';
+        }
+        
+        return $sep; 
+    }
+    add_filter('document_title_separator', 'sak_document_title_separator',10);
+
+    //add Support for post formats
     add_theme_support('post-formats', array('video', 'audio', 'gallery'));
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     add_theme_support('custom-background', array(
